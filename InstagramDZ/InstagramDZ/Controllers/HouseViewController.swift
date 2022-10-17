@@ -15,13 +15,21 @@ final class HouseViewController: UIViewController {
     private enum Constants {
         static let imageHouse = "house"
         static let imageHouseFill = "house.fill"
-        static let cellNibName = "StoriesTableViewCell"
-        static let cellIdentifier = "StoriesCell"
+        static let storiesCellNibName = "StoriesTableViewCell"
+        static let storiesCellIdentifier = "StoriesCell"
+        static let postsCellNibName = "PostsTableViewCell"
+        static let postsCellIdentifier = "PostsCell"
+        static let recomendationsCellNibName = "RecomendationsTableViewCell"
+        static let recomendationsCellIdentifier = "RecomendationsCell"
     }
     
     // MARK: - IBOutlet
     
     @IBOutlet weak var homeTableView: UITableView!
+    
+    // MARK: - Private Visual Properties
+    
+    var refresh = UIRefreshControl()
     
     // MARK: - Lifecycle
     
@@ -38,12 +46,31 @@ final class HouseViewController: UIViewController {
         tabBarItem.selectedImage = UIImage(systemName: Constants.imageHouseFill)
         tabBarController?.tabBar.unselectedItemTintColor = .white
         
+        refresh.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
+        refresh.tintColor = .lightGray
+        homeTableView.addSubview(refresh)
+        
         homeTableView.delegate = self
         homeTableView.dataSource = self
         
         homeTableView.register(
-            UINib(nibName: Constants.cellNibName, bundle: nil),
-            forCellReuseIdentifier: Constants.cellIdentifier)
+            UINib(nibName: Constants.storiesCellNibName, bundle: nil),
+            forCellReuseIdentifier: Constants.storiesCellIdentifier
+        )
+        homeTableView.register(
+            UINib(nibName: Constants.postsCellNibName, bundle: nil),
+            forCellReuseIdentifier: Constants.postsCellIdentifier
+        )
+        homeTableView.register(
+            UINib(nibName: Constants.recomendationsCellNibName, bundle: nil),
+            forCellReuseIdentifier: Constants.recomendationsCellIdentifier
+        )
+    }
+    
+    // MARK: - Private Action Methods
+    
+    @objc func refreshAction() {
+        refresh.endRefreshing()
     }
     
 }
@@ -57,21 +84,43 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = homeTableView.dequeueReusableCell(
-                withIdentifier: Constants.cellIdentifier, for: indexPath) as? StoriesTableViewCell
-        else { return UITableViewCell() }
-        
-        if (indexPath.row % 2) == 0 {
-            cell.backgroundColor = .yellow
-        } else {
-            cell.backgroundColor = .blue
+        switch indexPath.row {
+        case 0:
+            guard
+                let storiesCell = homeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.storiesCellIdentifier, for: indexPath) as? StoriesTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return storiesCell
+        case 2:
+            guard
+                let recomendationsCell = homeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.recomendationsCellIdentifier, for: indexPath) as? StoriesTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return recomendationsCell
+        default:
+            guard
+                let postsCell = homeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.postsCellIdentifier, for: indexPath) as? PostsTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return postsCell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(indexPath.row * 50 + 50)
+        switch indexPath.row {
+        case 0:
+            return 100
+        case 2:
+            return 350
+        default:
+            return 450
+        }
     }
     
 }
