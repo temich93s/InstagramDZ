@@ -13,6 +13,11 @@
 		AA8604B828FD595400C1B87B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8604B628FD595400C1B87B /* Main.storyboard */; };
 		AA8604BA28FD595600C1B87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8604B928FD595600C1B87B /* Assets.xcassets */; };
 		AA8604BD28FD595600C1B87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8604BB28FD595600C1B87B /* LaunchScreen.storyboard */; };
+		AA8604C928FD65CE00C1B87B /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604C828FD65CE00C1B87B /* HouseViewController.swift */; };
+		AA8604CB28FD660E00C1B87B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604CA28FD660E00C1B87B /* SearchViewController.swift */; };
+		AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604CC28FD665D00C1B87B /* PlusViewController.swift */; };
+		AA8604CF28FD669400C1B87B /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604CE28FD669400C1B87B /* LikeViewController.swift */; };
+		AA8604D128FD66C900C1B87B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604D028FD66C900C1B87B /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		AA8604B928FD595600C1B87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA8604BC28FD595600C1B87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA8604BE28FD595600C1B87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA8604C828FD65CE00C1B87B /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		AA8604CA28FD660E00C1B87B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AA8604CC28FD665D00C1B87B /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
+		AA8604CE28FD669400C1B87B /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		AA8604D028FD66C900C1B87B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		AA8604AF28FD595400C1B87B /* InstagramDZ */ = {
 			isa = PBXGroup;
 			children = (
+				AA8604C528FD624300C1B87B /* Controllers */,
 				AA8604B028FD595400C1B87B /* AppDelegate.swift */,
 				AA8604B228FD595400C1B87B /* SceneDelegate.swift */,
 				AA8604B428FD595400C1B87B /* ViewController.swift */,
@@ -65,6 +76,18 @@
 				AA8604BE28FD595600C1B87B /* Info.plist */,
 			);
 			path = InstagramDZ;
+			sourceTree = "<group>";
+		};
+		AA8604C528FD624300C1B87B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA8604C828FD65CE00C1B87B /* HouseViewController.swift */,
+				AA8604CA28FD660E00C1B87B /* SearchViewController.swift */,
+				AA8604CC28FD665D00C1B87B /* PlusViewController.swift */,
+				AA8604CE28FD669400C1B87B /* LikeViewController.swift */,
+				AA8604D028FD66C900C1B87B /* ProfileViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +183,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */,
+				AA8604CB28FD660E00C1B87B /* SearchViewController.swift in Sources */,
+				AA8604C928FD65CE00C1B87B /* HouseViewController.swift in Sources */,
 				AA8604B528FD595400C1B87B /* ViewController.swift in Sources */,
 				AA8604B128FD595400C1B87B /* AppDelegate.swift in Sources */,
+				AA8604D128FD66C900C1B87B /* ProfileViewController.swift in Sources */,
 				AA8604B328FD595400C1B87B /* SceneDelegate.swift in Sources */,
+				AA8604CF28FD669400C1B87B /* LikeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
