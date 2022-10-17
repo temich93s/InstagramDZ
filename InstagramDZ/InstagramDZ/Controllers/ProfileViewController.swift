@@ -8,7 +8,7 @@
 import UIKit
 
 /// страница профиля пользователя
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     // MARK: - Constants
     

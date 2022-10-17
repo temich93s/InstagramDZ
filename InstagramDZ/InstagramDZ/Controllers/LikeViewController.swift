@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран с лайками
-class LikeViewController: UIViewController {
+final class LikeViewController: UIViewController {
 
     // MARK: - Constants
     

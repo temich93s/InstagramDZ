@@ -8,7 +8,7 @@
 import UIKit
 
 /// страница поиска
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     // MARK: - Constants
     

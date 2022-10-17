@@ -8,7 +8,7 @@
 import UIKit
 
 /// страница добавления поста
-class PlusViewController: UIViewController {
+final class PlusViewController: UIViewController {
 
     // MARK: - Constants
     

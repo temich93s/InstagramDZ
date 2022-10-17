@@ -93,6 +93,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="YDK-4m-fck"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="vfU-N8-J7u" id="LM9-ZL-r7S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcE-W7-hcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
