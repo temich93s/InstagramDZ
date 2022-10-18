@@ -7,14 +7,21 @@
 
 import UIKit
 
-/// ячейка со сторисами
+// MARK: - Ячейка со сторисами
+
 final class StoriesTableViewCell: UITableViewCell {
 
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let colorCircle = "ColorCircle"
+    }
+    
     // MARK: - IBOutlet
     
-    @IBOutlet weak var addStoriesButton: UIButton!
-    @IBOutlet var circleViews: [UIView]!
-    @IBOutlet var profilesImageViews: [UIImageView]!
+    @IBOutlet weak private var addStoriesButton: UIButton!
+    @IBOutlet private var circleViews: [UIView]!
+    @IBOutlet private var profilesImageViews: [UIImageView]!
     
     // MARK: - Lifecycle
     
@@ -28,7 +35,7 @@ final class StoriesTableViewCell: UITableViewCell {
     private func setupUI() {
         for circleView in circleViews {
             circleView.layer.cornerRadius = circleView.frame.height / 2
-            circleView.layer.borderColor = UIColor.systemPink.cgColor
+            circleView.layer.borderColor = UIColor(named: Constants.colorCircle)?.cgColor
             circleView.layer.borderWidth = 3
         }
         for profileImageView in profilesImageViews {

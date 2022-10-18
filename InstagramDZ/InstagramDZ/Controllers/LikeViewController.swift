@@ -7,7 +7,8 @@
 
 import UIKit
 
-/// Экран с лайками
+// MARK: - Экран с лайками
+
 final class LikeViewController: UIViewController {
 
     // MARK: - Constants
@@ -15,6 +16,7 @@ final class LikeViewController: UIViewController {
     private enum Constants {
         static let imageHeart = "heart"
         static let imageHeartFill = "heart.fill"
+        static let colorBlack = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -27,7 +29,7 @@ final class LikeViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(named: Constants.colorBlack)
         tabBarItem.image = UIImage(systemName: Constants.imageHeart)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imageHeartFill)
     }

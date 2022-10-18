@@ -7,7 +7,8 @@
 
 import UIKit
 
-/// страница поиска
+// MARK: - Cтраница поиска
+
 final class SearchViewController: UIViewController {
 
     // MARK: - Constants
@@ -15,6 +16,7 @@ final class SearchViewController: UIViewController {
     private enum Constants {
         static let imageMagnifyingglassCircle = "magnifyingglass.circle"
         static let imageMagnifyingglassCircleFill = "magnifyingglass.circle.fill"
+        static let colorBlack = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -27,7 +29,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(named: Constants.colorBlack)
         tabBarItem.image = UIImage(systemName: Constants.imageMagnifyingglassCircle)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imageMagnifyingglassCircleFill)
     }

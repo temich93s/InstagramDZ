@@ -7,13 +7,21 @@
 
 import UIKit
 
-/// ячейка с рекомендациями
-class RecomendationsTableViewCell: UITableViewCell {
+// MARK: - Ячейка с рекомендациями
 
+final class RecomendationsTableViewCell: UITableViewCell {
+
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let colorDarkGray = "ColorDarkGray"
+    }
+    
     // MARK: - IBOutlet
-    @IBOutlet var subscribeButtons: [UIButton]!
-    @IBOutlet var backgroundRecomendationViews: [UIView]!
-    @IBOutlet var imageRecomandationImageViews: [UIImageView]!
+    
+    @IBOutlet private var subscribeButtons: [UIButton]!
+    @IBOutlet private var backgroundRecomendationViews: [UIView]!
+    @IBOutlet private var imageRecomandationImageViews: [UIImageView]!
     
     // MARK: - Lifecycle
     
@@ -29,7 +37,7 @@ class RecomendationsTableViewCell: UITableViewCell {
             subscribeButton.layer.cornerRadius = subscribeButton.frame.height / 4
         }
         for backgroundRecomendationView in backgroundRecomendationViews {
-            backgroundRecomendationView.layer.borderColor = UIColor.darkGray.cgColor
+            backgroundRecomendationView.layer.borderColor = UIColor(named: Constants.colorDarkGray)?.cgColor
             backgroundRecomendationView.layer.borderWidth = 1
         }
         for imageRecomandationImageView in imageRecomandationImageViews {

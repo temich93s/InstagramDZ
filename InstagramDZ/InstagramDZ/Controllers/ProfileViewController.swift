@@ -7,7 +7,8 @@
 
 import UIKit
 
-/// страница профиля пользователя
+// MARK: - Cтраница профиля пользователя
+
 final class ProfileViewController: UIViewController {
 
     // MARK: - Constants
@@ -15,6 +16,7 @@ final class ProfileViewController: UIViewController {
     private enum Constants {
         static let imagePersonCircle = "person.circle"
         static let imagePersonCircleFill = "person.circle.fill"
+        static let colorBlack = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -27,7 +29,7 @@ final class ProfileViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(named: Constants.colorBlack)
         tabBarItem.image = UIImage(systemName: Constants.imagePersonCircle)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imagePersonCircleFill)
     }

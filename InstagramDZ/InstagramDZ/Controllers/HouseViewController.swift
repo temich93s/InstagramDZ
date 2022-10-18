@@ -7,7 +7,8 @@
 
 import UIKit
 
-/// Лента новостей
+// MARK: - Лента новостей
+
 final class HouseViewController: UIViewController {
 
     // MARK: - Constants
@@ -21,15 +22,18 @@ final class HouseViewController: UIViewController {
         static let postsCellIdentifier = "PostsCell"
         static let recomendationsCellNibName = "RecomendationsTableViewCell"
         static let recomendationsCellIdentifier = "RecomendationsCell"
+        static let colorBlack = "ColorBlack"
+        static let colorLightGray = "ColorLightGray"
+        static let colorWhite = "ColorWhite"
     }
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak private var homeTableView: UITableView!
     
     // MARK: - Private Visual Properties
     
-    var refresh = UIRefreshControl()
+    private let refresh = UIRefreshControl()
     
     // MARK: - Lifecycle
     
@@ -37,17 +41,23 @@ final class HouseViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-
+    
+    // MARK: - Private Action Methods
+    
+    @objc private func refreshAction() {
+        refresh.endRefreshing()
+    }
+    
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = UIColor(named: Constants.colorBlack)
         tabBarItem.image = UIImage(systemName: Constants.imageHouse)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imageHouseFill)
-        tabBarController?.tabBar.unselectedItemTintColor = .white
+        tabBarController?.tabBar.unselectedItemTintColor = UIColor(named: Constants.colorWhite)
         
         refresh.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
-        refresh.tintColor = .lightGray
+        refresh.tintColor = UIColor(named: Constants.colorLightGray)
         homeTableView.addSubview(refresh)
         
         homeTableView.delegate = self
@@ -65,12 +75,6 @@ final class HouseViewController: UIViewController {
             UINib(nibName: Constants.recomendationsCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.recomendationsCellIdentifier
         )
-    }
-    
-    // MARK: - Private Action Methods
-    
-    @objc func refreshAction() {
-        refresh.endRefreshing()
     }
     
 }
@@ -115,11 +119,11 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 100
+            return 110
         case 2:
-            return 350
+            return 340
         default:
-            return 450
+            return 495
         }
     }
     

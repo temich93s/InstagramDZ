@@ -8,7 +8,7 @@
 /*
 import UIKit
 
- // MARK: Видеоурок 25 - UITableView
+// MARK: Видеоурок 25 - UITableView
  
 /// Conspect25VC
 class Conspect25VC2: UIViewController, UITableViewDelegate, UITableViewDataSource {
