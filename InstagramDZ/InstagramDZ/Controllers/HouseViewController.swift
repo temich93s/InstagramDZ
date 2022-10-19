@@ -88,6 +88,7 @@ final class HouseViewController: UIViewController {
         homeTableView.addSubview(refreshControl)
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.register(
             UINib(nibName: Constants.storiesCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.storiesCellIdentifier
@@ -117,7 +118,8 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
         case .stories:
             guard
                 let storiesCell = homeTableView.dequeueReusableCell(
-                    withIdentifier: Constants.storiesCellIdentifier, for: indexPath) as? StoriesTableViewCell
+                    withIdentifier: Constants.storiesCellIdentifier,
+                    for: indexPath) as? StoriesTableViewCell
             else {
                 return UITableViewCell()
             }
@@ -125,7 +127,8 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
         case .posts:
             guard
                 let postsCell = homeTableView.dequeueReusableCell(
-                    withIdentifier: Constants.postsCellIdentifier, for: indexPath) as? PostsTableViewCell
+                    withIdentifier: Constants.postsCellIdentifier,
+                    for: indexPath) as? PostsTableViewCell
             else {
                 return UITableViewCell()
             }
@@ -133,23 +136,26 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
         case .recomendations:
             guard
                 let recomendationsCell = homeTableView.dequeueReusableCell(
-                    withIdentifier: Constants.recomendationsCellIdentifier, for: indexPath) as? StoriesTableViewCell
+                    withIdentifier: Constants.recomendationsCellIdentifier,
+                    for: indexPath) as? RecomendationsTableViewCell
             else {
+                print("ddd")
                 return UITableViewCell()
             }
+            print("aaa")
             return recomendationsCell
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 110
-        case 2:
-            return 340
-        default:
-            return 495
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.row {
+//        case 0:
+//            return 110
+//        case 2:
+//            return 340
+//        default:
+//            return 495
+//        }
+//    }
     
 }
