@@ -139,23 +139,9 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
                     withIdentifier: Constants.recomendationsCellIdentifier,
                     for: indexPath) as? RecomendationsTableViewCell
             else {
-                print("ddd")
                 return UITableViewCell()
             }
-            print("aaa")
             return recomendationsCell
         }
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.row {
-//        case 0:
-//            return 110
-//        case 2:
-//            return 340
-//        default:
-//            return 495
-//        }
-//    }
-    
 }
