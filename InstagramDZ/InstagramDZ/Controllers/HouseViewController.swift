@@ -13,7 +13,7 @@ final class HouseViewController: UIViewController {
     
     // MARK: - Enum
     
-    enum TableCellsTypes {
+    private enum TableCellsTypes {
         case stories
         case posts
         case recomendations
