@@ -14,9 +14,9 @@ final class ProfileViewController: UIViewController {
     // MARK: - Constants
     
     private enum Constants {
-        static let imagePersonCircle = "person.circle"
-        static let imagePersonCircleFill = "person.circle.fill"
-        static let colorBlack = "ColorBlack"
+        static let imagePersonCircleName = "person.circle"
+        static let imagePersonCircleFillName = "person.circle.fill"
+        static let colorBlackName = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -29,8 +29,8 @@ final class ProfileViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: Constants.colorBlack)
-        tabBarItem.image = UIImage(systemName: Constants.imagePersonCircle)
-        tabBarItem.selectedImage = UIImage(systemName: Constants.imagePersonCircleFill)
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
+        tabBarItem.image = UIImage(systemName: Constants.imagePersonCircleName)
+        tabBarItem.selectedImage = UIImage(systemName: Constants.imagePersonCircleFillName)
     }
 }

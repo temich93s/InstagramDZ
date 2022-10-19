@@ -14,9 +14,9 @@ final class PlusViewController: UIViewController {
     // MARK: - Constants
     
     private enum Constants {
-        static let imagePlusApp = "plus.app"
-        static let imagePlusAppFill = "plus.app.fill"
-        static let colorBlack = "ColorBlack"
+        static let imagePlusAppName = "plus.app"
+        static let imagePlusAppFillName = "plus.app.fill"
+        static let colorBlackName = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -29,9 +29,9 @@ final class PlusViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: Constants.colorBlack)
-        tabBarItem.image = UIImage(systemName: Constants.imagePlusApp)
-        tabBarItem.selectedImage = UIImage(systemName: Constants.imagePlusAppFill)
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
+        tabBarItem.image = UIImage(systemName: Constants.imagePlusAppName)
+        tabBarItem.selectedImage = UIImage(systemName: Constants.imagePlusAppFillName)
     }
     
 }

@@ -14,7 +14,7 @@ final class RecomendationsTableViewCell: UITableViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let colorDarkGray = "ColorDarkGray"
+        static let colorDarkGrayName = "ColorDarkGray"
     }
     
     // MARK: - IBOutlet
@@ -37,7 +37,7 @@ final class RecomendationsTableViewCell: UITableViewCell {
             subscribeButton.layer.cornerRadius = subscribeButton.frame.height / 4
         }
         for backgroundRecomendationView in backgroundRecomendationViews {
-            backgroundRecomendationView.layer.borderColor = UIColor(named: Constants.colorDarkGray)?.cgColor
+            backgroundRecomendationView.layer.borderColor = UIColor(named: Constants.colorDarkGrayName)?.cgColor
             backgroundRecomendationView.layer.borderWidth = 1
         }
         for imageRecomandationImageView in imageRecomandationImageViews {

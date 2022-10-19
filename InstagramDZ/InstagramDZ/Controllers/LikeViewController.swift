@@ -14,9 +14,9 @@ final class LikeViewController: UIViewController {
     // MARK: - Constants
     
     private enum Constants {
-        static let imageHeart = "heart"
-        static let imageHeartFill = "heart.fill"
-        static let colorBlack = "ColorBlack"
+        static let imageHeartName = "heart"
+        static let imageHeartFillName = "heart.fill"
+        static let colorBlackName = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -29,9 +29,9 @@ final class LikeViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: Constants.colorBlack)
-        tabBarItem.image = UIImage(systemName: Constants.imageHeart)
-        tabBarItem.selectedImage = UIImage(systemName: Constants.imageHeartFill)
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
+        tabBarItem.image = UIImage(systemName: Constants.imageHeartName)
+        tabBarItem.selectedImage = UIImage(systemName: Constants.imageHeartFillName)
     }
 
 }

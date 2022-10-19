@@ -307,12 +307,12 @@
                 <outletCollection property="circleViews" destination="u2i-Lv-mTS" collectionClass="NSMutableArray" id="krF-cW-2WU"/>
                 <outletCollection property="circleViews" destination="RoL-zV-2Cj" collectionClass="NSMutableArray" id="DPO-hh-my3"/>
                 <outletCollection property="circleViews" destination="QX1-vM-6A2" collectionClass="NSMutableArray" id="as0-BW-LJc"/>
-                <outletCollection property="profilesImageViews" destination="xbj-3K-TyY" collectionClass="NSMutableArray" id="PlQ-eP-yQ5"/>
-                <outletCollection property="profilesImageViews" destination="l5n-Px-sE6" collectionClass="NSMutableArray" id="iia-iE-tfx"/>
-                <outletCollection property="profilesImageViews" destination="XsY-Ou-NJ8" collectionClass="NSMutableArray" id="9XV-0Y-NHR"/>
-                <outletCollection property="profilesImageViews" destination="Yqw-HZ-nEM" collectionClass="NSMutableArray" id="kmg-wH-CbH"/>
-                <outletCollection property="profilesImageViews" destination="e36-gX-dMJ" collectionClass="NSMutableArray" id="mbq-QL-MF8"/>
-                <outletCollection property="profilesImageViews" destination="bo7-NH-Jpv" collectionClass="NSMutableArray" id="9xd-Oq-IQU"/>
+                <outletCollection property="profileImageViews" destination="xbj-3K-TyY" collectionClass="NSMutableArray" id="PlQ-eP-yQ5"/>
+                <outletCollection property="profileImageViews" destination="l5n-Px-sE6" collectionClass="NSMutableArray" id="iia-iE-tfx"/>
+                <outletCollection property="profileImageViews" destination="XsY-Ou-NJ8" collectionClass="NSMutableArray" id="9XV-0Y-NHR"/>
+                <outletCollection property="profileImageViews" destination="Yqw-HZ-nEM" collectionClass="NSMutableArray" id="kmg-wH-CbH"/>
+                <outletCollection property="profileImageViews" destination="e36-gX-dMJ" collectionClass="NSMutableArray" id="mbq-QL-MF8"/>
+                <outletCollection property="profileImageViews" destination="bo7-NH-Jpv" collectionClass="NSMutableArray" id="9xd-Oq-IQU"/>
                 <outletCollection property="circleViews" destination="yWH-Z1-bAK" collectionClass="NSMutableArray" id="QgC-C5-1AE"/>
             </connections>
             <point key="canvasLocation" x="400.72463768115944" y="-14.397321428571427"/>
@@ -326,7 +326,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ColorLightGray">
-            <color red="0.63529413940000001" green="0.63921570780000003" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.63499999046325684" green="0.63899999856948853" blue="0.63499999046325684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ColorPlus">
             <color red="0.2588235438" green="0.58039218189999997" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

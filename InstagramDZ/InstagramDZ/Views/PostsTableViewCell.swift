@@ -14,7 +14,7 @@ final class PostsTableViewCell: UITableViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let colorLightGray = "ColorLightGray"
+        static let colorLightGrayName = "ColorLightGray"
         static let textPlaceholder = "Добавьте комментарий..."
     }
     
@@ -34,7 +34,7 @@ final class PostsTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     
     private func setupUI() {
-        guard let placeholderTextColor = UIColor(named: Constants.colorLightGray) else { return }
+        guard let placeholderTextColor = UIColor(named: Constants.colorLightGrayName) else { return }
         friendLogoImageView.layer.cornerRadius = friendLogoImageView.frame.height / 2
         userLogoImageView.layer.cornerRadius = userLogoImageView.frame.height / 2
         addComentTextView.attributedPlaceholder = NSAttributedString(

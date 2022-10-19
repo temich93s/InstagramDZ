@@ -14,9 +14,9 @@ final class SearchViewController: UIViewController {
     // MARK: - Constants
     
     private enum Constants {
-        static let imageMagnifyingglassCircle = "magnifyingglass.circle"
-        static let imageMagnifyingglassCircleFill = "magnifyingglass.circle.fill"
-        static let colorBlack = "ColorBlack"
+        static let imageMagnifyingglassCircleName = "magnifyingglass.circle"
+        static let imageMagnifyingglassCircleFillName = "magnifyingglass.circle.fill"
+        static let colorBlackName = "ColorBlack"
     }
     
     // MARK: - Lifecycle
@@ -29,9 +29,9 @@ final class SearchViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: Constants.colorBlack)
-        tabBarItem.image = UIImage(systemName: Constants.imageMagnifyingglassCircle)
-        tabBarItem.selectedImage = UIImage(systemName: Constants.imageMagnifyingglassCircleFill)
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
+        tabBarItem.image = UIImage(systemName: Constants.imageMagnifyingglassCircleName)
+        tabBarItem.selectedImage = UIImage(systemName: Constants.imageMagnifyingglassCircleFillName)
     }
 
 }

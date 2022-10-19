@@ -10,30 +10,42 @@ import UIKit
 // MARK: - Лента новостей
 
 final class HouseViewController: UIViewController {
-
+    
+    // MARK: - Enum
+    
+    enum TableCellsTypes {
+        case stories
+        case posts
+        case recomendations
+    }
+    
     // MARK: - Constants
     
     private enum Constants {
-        static let imageHouse = "house"
-        static let imageHouseFill = "house.fill"
+        static let imageHouseName = "house"
+        static let imageHouseFillName = "house.fill"
         static let storiesCellNibName = "StoriesTableViewCell"
         static let storiesCellIdentifier = "StoriesCell"
         static let postsCellNibName = "PostsTableViewCell"
         static let postsCellIdentifier = "PostsCell"
         static let recomendationsCellNibName = "RecomendationsTableViewCell"
         static let recomendationsCellIdentifier = "RecomendationsCell"
-        static let colorBlack = "ColorBlack"
-        static let colorLightGray = "ColorLightGray"
-        static let colorWhite = "ColorWhite"
+        static let colorBlackName = "ColorBlack"
+        static let colorLightGrayName = "ColorLightGray"
+        static let colorWhiteName = "ColorWhite"
     }
-    
+
     // MARK: - IBOutlet
     
     @IBOutlet weak private var homeTableView: UITableView!
     
     // MARK: - Private Visual Properties
     
-    private let refresh = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
+    
+    // MARK: - Private Properties
+    
+    private var tableCellsTypes: [TableCellsTypes] = [.stories, .posts, .recomendations, .posts, .posts]
     
     // MARK: - Lifecycle
     
@@ -45,24 +57,37 @@ final class HouseViewController: UIViewController {
     // MARK: - Private Action Methods
     
     @objc private func refreshAction() {
-        refresh.endRefreshing()
+        refreshControl.endRefreshing()
     }
     
     // MARK: - Private Methods
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: Constants.colorBlack)
-        tabBarItem.image = UIImage(systemName: Constants.imageHouse)
-        tabBarItem.selectedImage = UIImage(systemName: Constants.imageHouseFill)
-        tabBarController?.tabBar.unselectedItemTintColor = UIColor(named: Constants.colorWhite)
-        
-        refresh.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
-        refresh.tintColor = UIColor(named: Constants.colorLightGray)
-        homeTableView.addSubview(refresh)
-        
+        setupHouseVC()
+        setupTabBar()
+        setupRefreshControl()
+        setupHomeTableView()
+    }
+    
+    private func setupTabBar() {
+        tabBarItem.image = UIImage(systemName: Constants.imageHouseName)
+        tabBarItem.selectedImage = UIImage(systemName: Constants.imageHouseFillName)
+        tabBarController?.tabBar.unselectedItemTintColor = UIColor(named: Constants.colorWhiteName)
+    }
+    
+    private func setupHouseVC() {
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
+        refreshControl.tintColor = UIColor(named: Constants.colorLightGrayName)
+    }
+    
+    private func setupHomeTableView() {
+        homeTableView.addSubview(refreshControl)
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        
         homeTableView.register(
             UINib(nibName: Constants.storiesCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.storiesCellIdentifier
@@ -76,7 +101,6 @@ final class HouseViewController: UIViewController {
             forCellReuseIdentifier: Constants.recomendationsCellIdentifier
         )
     }
-    
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -84,12 +108,13 @@ final class HouseViewController: UIViewController {
 extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        tableCellsTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        let type = tableCellsTypes[indexPath.row]
+        switch type {
+        case .stories:
             guard
                 let storiesCell = homeTableView.dequeueReusableCell(
                     withIdentifier: Constants.storiesCellIdentifier, for: indexPath) as? StoriesTableViewCell
@@ -97,15 +122,7 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             return storiesCell
-        case 2:
-            guard
-                let recomendationsCell = homeTableView.dequeueReusableCell(
-                    withIdentifier: Constants.recomendationsCellIdentifier, for: indexPath) as? StoriesTableViewCell
-            else {
-                return UITableViewCell()
-            }
-            return recomendationsCell
-        default:
+        case .posts:
             guard
                 let postsCell = homeTableView.dequeueReusableCell(
                     withIdentifier: Constants.postsCellIdentifier, for: indexPath) as? PostsTableViewCell
@@ -113,6 +130,14 @@ extension HouseViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             return postsCell
+        case .recomendations:
+            guard
+                let recomendationsCell = homeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.recomendationsCellIdentifier, for: indexPath) as? StoriesTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return recomendationsCell
         }
     }
     

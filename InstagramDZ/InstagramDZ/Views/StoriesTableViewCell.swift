@@ -14,14 +14,14 @@ final class StoriesTableViewCell: UITableViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let colorCircle = "ColorCircle"
+        static let colorCircleName = "ColorCircle"
     }
     
     // MARK: - IBOutlet
     
     @IBOutlet weak private var addStoriesButton: UIButton!
     @IBOutlet private var circleViews: [UIView]!
-    @IBOutlet private var profilesImageViews: [UIImageView]!
+    @IBOutlet private var profileImageViews: [UIImageView]!
     
     // MARK: - Lifecycle
     
@@ -35,10 +35,10 @@ final class StoriesTableViewCell: UITableViewCell {
     private func setupUI() {
         for circleView in circleViews {
             circleView.layer.cornerRadius = circleView.frame.height / 2
-            circleView.layer.borderColor = UIColor(named: Constants.colorCircle)?.cgColor
+            circleView.layer.borderColor = UIColor(named: Constants.colorCircleName)?.cgColor
             circleView.layer.borderWidth = 3
         }
-        for profileImageView in profilesImageViews {
+        for profileImageView in profileImageViews {
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         }
         addStoriesButton.layer.cornerRadius = addStoriesButton.frame.height / 2
