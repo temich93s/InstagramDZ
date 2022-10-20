@@ -15,6 +15,10 @@ final class CommentsTableViewCell: UITableViewCell {
     
     private enum Constants {
         static let colorDarkGrayName = "ColorDarkGray"
+        static let friendNameText = "myfriend "
+        static let friendCommentText = "Отличное фото, когда у тебя отпуск?) "
+        static let dateCommentText = "4д."
+        static let colorLightGrayName = "ColorLightGray"
     }
     
     // MARK: - IBOutlet
@@ -22,12 +26,6 @@ final class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendLogoImageView: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
-    
-    // MARK: - Private Properties
-    
-    private var friendNameText = "myfriend "
-    private var friendCommentText = "Отличное фото, когда у тебя отпуск?) "
-    private var dateCommentText = "4д."
     
     // MARK: - Lifecycle
     
@@ -39,25 +37,29 @@ final class CommentsTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     
     private func setupUI() {
+        setupFriendLogoImageView()
+        setupCommentLabel()
+    }
+    
+    private func setupFriendLogoImageView() {
         friendLogoImageView.layer.cornerRadius = friendLogoImageView.frame.height / 2
-        
+    }
+    
+    private func setupCommentLabel() {
+        guard let colorLightGray = UIColor(named: Constants.colorLightGrayName) else { return }
         let friendNameAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
         let friendNameAttributeText = NSMutableAttributedString(
-            string: friendNameText, attributes: friendNameAttribute)
-
+            string: Constants.friendNameText, attributes: friendNameAttribute)
         let friendCommentAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
         let friendCommentAttributeText = NSMutableAttributedString(
-            string: friendCommentText, attributes: friendCommentAttribute)
-        
-        let dateCommentAttribute = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            string: Constants.friendCommentText, attributes: friendCommentAttribute)
+        let dateCommentAttribute = [NSAttributedString.Key.foregroundColor: colorLightGray]
         let dateCommentAttributeText = NSMutableAttributedString(
-            string: dateCommentText, attributes: dateCommentAttribute)
-        
+            string: Constants.dateCommentText, attributes: dateCommentAttribute)
         let resultText = NSMutableAttributedString()
         resultText.append(friendNameAttributeText)
         resultText.append(friendCommentAttributeText)
         resultText.append(dateCommentAttributeText)
-        
         commentLabel.attributedText = resultText
     }
 }

@@ -39,17 +39,22 @@ final class LikeViewController: UIViewController {
         
         static let colorBlackName = "ColorBlack"
         static let colorLightGrayName = "ColorLightGray"
+        static let colorWhiteName = "ColorWhite"
     }
     
     // MARK: - Private Visual Properties
     
     @IBOutlet weak private var likeTableView: UITableView!
+    @IBOutlet weak var mainHeaderLabel: UILabel!
+    
     private let refreshControl = UIRefreshControl()
     
     // MARK: - Private Properties
     
-    private var tableCellsTypes: [TableCellsTypes] = [.comment, .comment, .comment, .comment, .comment]
-    private var tableSectionsTypes: [TableSectionsTypes] = [.today, .week, .manyWeeksAgo]
+    private var tableCellsForTodaySection: [TableCellsTypes] = [.comment, .comment, .comment, .comment]
+    private var tableCellsForWeekSection: [TableCellsTypes] = [.comment, .comment, .comment]
+    private var tableCellsForManyWeeksAgoSection: [TableCellsTypes] = [.comment, .comment, .comment, .comment, .comment]
+    private var tableSections: [TableSectionsTypes] = [.today, .week, .manyWeeksAgo]
     
     // MARK: - Lifecycle
     
@@ -88,6 +93,7 @@ final class LikeViewController: UIViewController {
     }
     
     private func setupLikeTableView() {
+        mainHeaderLabel.frame = CGRect(x: 0, y: 0, width: 0, height: 80)
         likeTableView.addSubview(refreshControl)
         likeTableView.delegate = self
         likeTableView.dataSource = self
@@ -98,6 +104,21 @@ final class LikeViewController: UIViewController {
             forCellReuseIdentifier: Constants.commentsCellIdentifier
         )
     }
+    
+    private func createTableCell(indexPath: IndexPath, tableCellsSection: [TableCellsTypes]) -> UITableViewCell {
+        switch tableCellsSection[indexPath.row] {
+        case .comment:
+            guard
+                let commentCell = likeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.commentsCellIdentifier, for: indexPath) as? CommentsTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return commentCell
+        case .recomendation:
+            return UITableViewCell()
+        }
+    }
 
 }
 
@@ -106,39 +127,35 @@ final class LikeViewController: UIViewController {
 extension LikeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        tableSectionsTypes.count
+        tableSections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let type = tableSectionsTypes[section]
+        let type = tableSections[section]
         switch type {
         case .today:
-            return 4
+            return tableCellsForTodaySection.count
         case .week:
-            return 6
+            return tableCellsForWeekSection.count
         case .manyWeeksAgo:
-            return 8
+            return tableCellsForManyWeeksAgoSection.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-//        let section = tableSectionsTypes[indexPath.section]
-//        let row = tableSectionsTypes[indexPath.row]
-        
-        guard
-            let storiesCell = likeTableView.dequeueReusableCell(
-                withIdentifier: Constants.commentsCellIdentifier,
-                for: indexPath) as? CommentsTableViewCell
-        else {
-            return UITableViewCell()
+        let section = tableSections[indexPath.section]
+        switch section {
+        case .today:
+            return createTableCell(indexPath: indexPath, tableCellsSection: tableCellsForTodaySection)
+        case .week:
+            return createTableCell(indexPath: indexPath, tableCellsSection: tableCellsForWeekSection)
+        case .manyWeeksAgo:
+            return createTableCell(indexPath: indexPath, tableCellsSection: tableCellsForManyWeeksAgoSection)
         }
-        return storiesCell
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let type = tableSectionsTypes[section]
+        let type = tableSections[section]
         switch type {
         case .today:
             return Constants.todaySectionName
@@ -150,14 +167,28 @@ extension LikeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        header.textLabel?.textColor = UIColor.white
-        
-        let friendCommentAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
-        let friendCommentAttributeText = NSMutableAttributedString(
-            string: "friendCommentText", attributes: friendCommentAttribute)
-        header.textLabel?.attributedText = friendCommentAttributeText
+        guard
+            let header = view as? UITableViewHeaderFooterView,
+            let colorWhite = UIColor(named: Constants.colorWhiteName)
+        else { return }
+        let friendCommentAttribute = [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
+            NSAttributedString.Key.foregroundColor: colorWhite
+        ]
+        var attributeText = NSMutableAttributedString()
+        let type = tableSections[section]
+        switch type {
+        case .today:
+            attributeText = NSMutableAttributedString(
+                string: Constants.todaySectionName, attributes: friendCommentAttribute)
+        case .week:
+            attributeText = NSMutableAttributedString(
+                string: Constants.weekSectionName, attributes: friendCommentAttribute)
+        case .manyWeeksAgo:
+            attributeText = NSMutableAttributedString(
+                string: Constants.manyWeeksAgoSectionName, attributes: friendCommentAttribute)
+        }
+        header.textLabel?.attributedText = attributeText
     }
     
 }
