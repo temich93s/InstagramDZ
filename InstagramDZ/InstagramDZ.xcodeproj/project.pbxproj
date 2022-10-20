@@ -32,6 +32,8 @@
 		AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604CC28FD665D00C1B87B /* PlusViewController.swift */; };
 		AA8604CF28FD669400C1B87B /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604CE28FD669400C1B87B /* LikeViewController.swift */; };
 		AA8604D128FD66C900C1B87B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604D028FD66C900C1B87B /* ProfileViewController.swift */; };
+		AA86907A290154AA00756024 /* FollowersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA869078290154AA00756024 /* FollowersTableViewCell.swift */; };
+		AA86907B290154AA00756024 /* FollowersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA869079290154AA00756024 /* FollowersTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		AA8604CC28FD665D00C1B87B /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
 		AA8604CE28FD669400C1B87B /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		AA8604D028FD66C900C1B87B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AA869078290154AA00756024 /* FollowersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableViewCell.swift; sourceTree = "<group>"; };
+		AA869079290154AA00756024 /* FollowersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowersTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */,
 				AA6BEB17290037C000E09143 /* CommentsTableViewCell.swift */,
 				AA6BEB18290037C000E09143 /* CommentsTableViewCell.xib */,
+				AA869078290154AA00756024 /* FollowersTableViewCell.swift */,
+				AA869079290154AA00756024 /* FollowersTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				AA34143E28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib in Resources */,
 				AA8604BD28FD595600C1B87B /* LaunchScreen.storyboard in Resources */,
 				AA34143A28FD88E300DBDF33 /* PostsTableViewCell.xib in Resources */,
+				AA86907B290154AA00756024 /* FollowersTableViewCell.xib in Resources */,
 				AA34143628FD75C400DBDF33 /* StoriesTableViewCell.xib in Resources */,
 				AA8604BA28FD595600C1B87B /* Assets.xcassets in Resources */,
 				AA8604B828FD595400C1B87B /* Main.storyboard in Resources */,
@@ -247,6 +254,7 @@
 			files = (
 				AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */,
 				AA8604CB28FD660E00C1B87B /* SearchViewController.swift in Sources */,
+				AA86907A290154AA00756024 /* FollowersTableViewCell.swift in Sources */,
 				AA6BEB152900357800E09143 /* Conspect26VC4.swift in Sources */,
 				AA6BEB162900357800E09143 /* Conspect26VC.swift in Sources */,
 				AA6BEB122900357800E09143 /* Conspect26VC5.swift in Sources */,

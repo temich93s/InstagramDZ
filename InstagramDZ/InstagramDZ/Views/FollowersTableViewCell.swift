@@ -1,23 +1,23 @@
 //
-//  CommentsTableViewCell.swift
+//  FollowersTableViewCell.swift
 //  InstagramDZ
 //
-//  Created by 2lup on 19.10.2022.
+//  Created by 2lup on 20.10.2022.
 //
 
 import UIKit
 
-// MARK: - Ячейка с комментарием
+// MARK: - Ячейка с новыми подписчиками
 
-final class CommentsTableViewCell: UITableViewCell {
-
+final class FollowersTableViewCell: UITableViewCell {
+    
     // MARK: - Constants
     
     private enum Constants {
         static let colorDarkGrayName = "ColorDarkGray"
-        static let friendNameText = "mynewfriend "
-        static let friendCommentText = "понравился ваш комментарий: \"красиво\" "
-        static let dateCommentText = "4д."
+        static let friendNameText = "myoldfriend "
+        static let friendCommentText = "подписался(-ась) на ваши обновления. "
+        static let dateCommentText = "2д."
         static let colorLightGrayName = "ColorLightGray"
     }
     

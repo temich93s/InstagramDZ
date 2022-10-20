@@ -21,7 +21,7 @@ final class LikeViewController: UIViewController {
     
     private enum TableCellsTypes {
         case comment
-        case recomendation
+        case follower
     }
     
     // MARK: - Constants
@@ -30,13 +30,12 @@ final class LikeViewController: UIViewController {
         static let todaySectionName = "Сегодня"
         static let weekSectionName = "На этой неделе"
         static let manyWeeksAgoSectionName = "Более недели назад"
-        
         static let imageHeartName = "heart"
         static let imageHeartFillName = "heart.fill"
-        
         static let commentsCellNibName = "CommentsTableViewCell"
         static let commentsCellIdentifier = "CommentsCell"
-        
+        static let followersCellNibName = "FollowersTableViewCell"
+        static let followersCellIdentifier = "FollowersCell"
         static let colorBlackName = "ColorBlack"
         static let colorLightGrayName = "ColorLightGray"
         static let colorWhiteName = "ColorWhite"
@@ -51,9 +50,9 @@ final class LikeViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private var tableCellsForTodaySection: [TableCellsTypes] = [.comment, .comment, .comment, .comment]
-    private var tableCellsForWeekSection: [TableCellsTypes] = [.comment, .comment, .comment]
-    private var tableCellsForManyWeeksAgoSection: [TableCellsTypes] = [.comment, .comment, .comment, .comment, .comment]
+    private var tableCellsForTodaySection: [TableCellsTypes] = [.follower, .comment, .follower]
+    private var tableCellsForWeekSection: [TableCellsTypes] = [.comment, .comment, .follower, .comment, .follower]
+    private var tableCellsForManyWeeksAgoSection: [TableCellsTypes] = [.comment, .comment, .follower, .follower]
     private var tableSections: [TableSectionsTypes] = [.today, .week, .manyWeeksAgo]
     
     // MARK: - Lifecycle
@@ -101,8 +100,10 @@ final class LikeViewController: UIViewController {
         likeTableView.sectionHeaderTopPadding = 0
         likeTableView.register(
             UINib(nibName: Constants.commentsCellNibName, bundle: nil),
-            forCellReuseIdentifier: Constants.commentsCellIdentifier
-        )
+            forCellReuseIdentifier: Constants.commentsCellIdentifier)
+        likeTableView.register(
+            UINib(nibName: Constants.followersCellNibName, bundle: nil),
+            forCellReuseIdentifier: Constants.followersCellIdentifier)
     }
     
     private func createTableCell(indexPath: IndexPath, tableCellsSection: [TableCellsTypes]) -> UITableViewCell {
@@ -115,11 +116,17 @@ final class LikeViewController: UIViewController {
                 return UITableViewCell()
             }
             return commentCell
-        case .recomendation:
-            return UITableViewCell()
+        case .follower:
+            guard
+                let folowersCell = likeTableView.dequeueReusableCell(
+                    withIdentifier: Constants.followersCellIdentifier, for: indexPath) as? FollowersTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            return folowersCell
         }
     }
-
+    
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -175,8 +182,8 @@ extension LikeViewController: UITableViewDataSource, UITableViewDelegate {
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17),
             NSAttributedString.Key.foregroundColor: colorWhite
         ]
-        var attributeText = NSMutableAttributedString()
         let type = tableSections[section]
+        var attributeText = NSMutableAttributedString()
         switch type {
         case .today:
             attributeText = NSMutableAttributedString(
