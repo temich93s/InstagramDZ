@@ -15,6 +15,10 @@
 		AA34143A28FD88E300DBDF33 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA34143828FD88E300DBDF33 /* PostsTableViewCell.xib */; };
 		AA34143D28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34143B28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift */; };
 		AA34143E28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */; };
+		AA665DD82902EA9F00A77A0D /* Conspect27VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665DD42902EA9F00A77A0D /* Conspect27VC.swift */; };
+		AA665DD92902EA9F00A77A0D /* Conspect27VC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665DD52902EA9F00A77A0D /* Conspect27VC3.swift */; };
+		AA665DDA2902EA9F00A77A0D /* Conspect27VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665DD62902EA9F00A77A0D /* Conspect27VC2.swift */; };
+		AA665DDB2902EA9F00A77A0D /* Conspect27VC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665DD72902EA9F00A77A0D /* Conspect27VC4.swift */; };
 		AA6BEB122900357800E09143 /* Conspect26VC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */; };
 		AA6BEB132900357800E09143 /* Conspect26VC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */; };
 		AA6BEB142900357800E09143 /* Conspect26VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0F2900357800E09143 /* Conspect26VC2.swift */; };
@@ -45,6 +49,10 @@
 		AA34143828FD88E300DBDF33 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		AA34143B28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsTableViewCell.swift; sourceTree = "<group>"; };
 		AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsTableViewCell.xib; sourceTree = "<group>"; };
+		AA665DD42902EA9F00A77A0D /* Conspect27VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC.swift; sourceTree = "<group>"; };
+		AA665DD52902EA9F00A77A0D /* Conspect27VC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC3.swift; sourceTree = "<group>"; };
+		AA665DD62902EA9F00A77A0D /* Conspect27VC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC2.swift; sourceTree = "<group>"; };
+		AA665DD72902EA9F00A77A0D /* Conspect27VC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC4.swift; sourceTree = "<group>"; };
 		AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC5.swift; sourceTree = "<group>"; };
 		AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC3.swift; sourceTree = "<group>"; };
 		AA6BEB0F2900357800E09143 /* Conspect26VC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC2.swift; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 				AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */,
 				AA6BEB102900357800E09143 /* Conspect26VC4.swift */,
 				AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */,
+				AA665DD42902EA9F00A77A0D /* Conspect27VC.swift */,
+				AA665DD62902EA9F00A77A0D /* Conspect27VC2.swift */,
+				AA665DD52902EA9F00A77A0D /* Conspect27VC3.swift */,
+				AA665DD72902EA9F00A77A0D /* Conspect27VC4.swift */,
 			);
 			path = Conspects;
 			sourceTree = "<group>";
@@ -252,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA665DD92902EA9F00A77A0D /* Conspect27VC3.swift in Sources */,
 				AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */,
 				AA8604CB28FD660E00C1B87B /* SearchViewController.swift in Sources */,
+				AA665DD82902EA9F00A77A0D /* Conspect27VC.swift in Sources */,
+				AA665DDB2902EA9F00A77A0D /* Conspect27VC4.swift in Sources */,
 				AA86907A290154AA00756024 /* FollowersTableViewCell.swift in Sources */,
 				AA6BEB152900357800E09143 /* Conspect26VC4.swift in Sources */,
 				AA6BEB162900357800E09143 /* Conspect26VC.swift in Sources */,
@@ -271,6 +286,7 @@
 				AA34142E28FD73E800DBDF33 /* Conspect25VC.swift in Sources */,
 				AA8604CF28FD669400C1B87B /* LikeViewController.swift in Sources */,
 				AA34143528FD75C400DBDF33 /* StoriesTableViewCell.swift in Sources */,
+				AA665DDA2902EA9F00A77A0D /* Conspect27VC2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
