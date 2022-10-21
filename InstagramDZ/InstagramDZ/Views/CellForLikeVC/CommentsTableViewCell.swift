@@ -23,8 +23,8 @@ final class CommentsTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak private var friendLogoImageView: UIImageView!
-    @IBOutlet weak private var commentLabel: UILabel!
+    @IBOutlet weak var friendLogoImageView: UIImageView!
+    @IBOutlet weak var commentLabel: UILabel!
     
     // MARK: - Lifecycle
     
@@ -36,10 +36,14 @@ final class CommentsTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     
     private func setupUI() {
+        setupFriendLogoImageView()
         setupCommentLabel()
+    }
+    
+    private func setupFriendLogoImageView() {
         friendLogoImageView.layer.cornerRadius = friendLogoImageView.frame.height / 2
     }
-
+    
     private func setupCommentLabel() {
         guard let colorLightGray = UIColor(named: Constants.colorLightGrayName) else { return }
         let friendNameAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]

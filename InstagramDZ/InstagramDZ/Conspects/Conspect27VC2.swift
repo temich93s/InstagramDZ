@@ -8,9 +8,11 @@
 // MARK: Видеоурок 27 - UICollectionView, Model, Clean MVC
 
 /*
+
 import UIKit
 
-final class Conspect27VC2: UICollectionViewCell {
+ //
+class Conspect27VC2: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

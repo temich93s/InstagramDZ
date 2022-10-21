@@ -10,7 +10,7 @@
 /*
 import UIKit
 
-//
+ //
 class Conspect27VC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!

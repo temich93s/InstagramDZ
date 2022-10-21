@@ -10,7 +10,8 @@
 /*
 import UIKit
 
-final class Conspect27VC4: UIViewController {
+ //
+class Conspect27VC4: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {

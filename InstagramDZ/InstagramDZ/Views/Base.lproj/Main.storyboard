@@ -201,17 +201,82 @@
                     <view key="view" contentMode="scaleToFill" id="Msl-T6-CD8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2z-W1-1XX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZu-Dm-UjQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Vl4-Ec-Xvy"/>
+                                        </constraints>
+                                        <color key="tintColor" name="ColorWhite"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myprofile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppq-8V-lHF">
+                                        <rect key="frame" x="50" y="0.0" width="314" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" name="ColorWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-d6-KiR">
+                                        <rect key="frame" x="364" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="VbK-vb-GPo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                            <color key="baseForegroundColor" name="ColorWhite"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FdN-iR-QfK"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z2k-Ad-wPS">
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fl9-hQ-Auk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WHP-cV-x6b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WHP-cV-x6b" firstAttribute="bottom" secondItem="Z2k-Ad-wPS" secondAttribute="bottom" id="2MM-B7-0nn"/>
+                            <constraint firstItem="e2z-W1-1XX" firstAttribute="leading" secondItem="WHP-cV-x6b" secondAttribute="leading" id="A4f-WV-aBb"/>
+                            <constraint firstItem="Z2k-Ad-wPS" firstAttribute="top" secondItem="e2z-W1-1XX" secondAttribute="bottom" id="ELh-1N-VYv"/>
+                            <constraint firstItem="e2z-W1-1XX" firstAttribute="top" secondItem="WHP-cV-x6b" secondAttribute="top" id="Law-PX-NIc"/>
+                            <constraint firstAttribute="trailing" secondItem="fl9-hQ-Auk" secondAttribute="trailing" id="TeR-Jm-CWg"/>
+                            <constraint firstItem="fl9-hQ-Auk" firstAttribute="top" secondItem="Msl-T6-CD8" secondAttribute="top" id="dXu-mJ-gL6"/>
+                            <constraint firstItem="fl9-hQ-Auk" firstAttribute="leading" secondItem="Msl-T6-CD8" secondAttribute="leading" id="hMr-L0-gOT"/>
+                            <constraint firstItem="e2z-W1-1XX" firstAttribute="top" secondItem="fl9-hQ-Auk" secondAttribute="bottom" id="jdz-ZM-0Ij"/>
+                            <constraint firstItem="WHP-cV-x6b" firstAttribute="trailing" secondItem="Z2k-Ad-wPS" secondAttribute="trailing" id="s4N-zS-QZH"/>
+                            <constraint firstItem="e2z-W1-1XX" firstAttribute="trailing" secondItem="WHP-cV-x6b" secondAttribute="trailing" id="tA4-vw-Z7c"/>
+                            <constraint firstItem="Z2k-Ad-wPS" firstAttribute="leading" secondItem="WHP-cV-x6b" secondAttribute="leading" id="tnF-YM-Ave"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" id="lGC-pg-fJJ"/>
+                    <connections>
+                        <outlet property="profileTableView" destination="Z2k-Ad-wPS" id="E3v-e1-5ay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W32-IN-aye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3710" y="-560"/>
+            <point key="canvasLocation" x="3749" y="-560"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>

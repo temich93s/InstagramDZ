@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCollectionCell" rowHeight="193" id="KGk-i7-Jjw" customClass="PostCollectionTableViewCell" customModule="InstagramDZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icF-3Y-J8S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Fp-de-HUi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpz-1A-Vk6">
+                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="50"/>
+                                        <color key="tintColor" name="ColorWhite"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.grid.3x3.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-tw-SqJ">
+                                        <rect key="frame" x="106.5" y="0.0" width="107" height="50"/>
+                                        <color key="tintColor" name="ColorLightGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.tv" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfL-uq-9mb">
+                                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="50"/>
+                                        <color key="tintColor" name="ColorLightGray"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="person.crop.rectangle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lT0-jY-Mh8"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-lB-Y2e">
+                                <rect key="frame" x="0.0" y="50" width="320" height="450"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="FLY-NP-4Q6">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2bG-lB-Y2e" secondAttribute="trailing" id="8xV-Bf-dWq"/>
+                            <constraint firstItem="2bG-lB-Y2e" firstAttribute="leading" secondItem="icF-3Y-J8S" secondAttribute="leading" id="J3K-jg-SWf"/>
+                            <constraint firstItem="6Fp-de-HUi" firstAttribute="top" secondItem="icF-3Y-J8S" secondAttribute="top" id="RkC-kV-hDb"/>
+                            <constraint firstAttribute="trailing" secondItem="6Fp-de-HUi" secondAttribute="trailing" id="TkQ-Ax-1O2"/>
+                            <constraint firstAttribute="height" constant="500" id="fQT-c0-X6E"/>
+                            <constraint firstItem="6Fp-de-HUi" firstAttribute="leading" secondItem="icF-3Y-J8S" secondAttribute="leading" id="ijT-C2-4kZ"/>
+                            <constraint firstAttribute="bottom" secondItem="2bG-lB-Y2e" secondAttribute="bottom" id="kPR-0w-c1o"/>
+                            <constraint firstItem="2bG-lB-Y2e" firstAttribute="top" secondItem="6Fp-de-HUi" secondAttribute="bottom" id="wFc-0B-azS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="ColorBlack"/>
+                <constraints>
+                    <constraint firstItem="icF-3Y-J8S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1PL-pJ-iiE"/>
+                    <constraint firstAttribute="trailing" secondItem="icF-3Y-J8S" secondAttribute="trailing" id="Fnv-fr-XjZ"/>
+                    <constraint firstItem="icF-3Y-J8S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PO7-oy-h1X"/>
+                    <constraint firstAttribute="bottom" secondItem="icF-3Y-J8S" secondAttribute="bottom" id="uMh-bW-AhO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="postCollectionView" destination="2bG-lB-Y2e" id="3XA-4p-IFN"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="110.82589285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.rectangle" catalog="system" width="128" height="93"/>
+        <image name="play.tv" catalog="system" width="128" height="97"/>
+        <image name="square.grid.3x3.square" catalog="system" width="128" height="114"/>
+        <namedColor name="ColorBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorLightGray">
+            <color red="0.63499999046325684" green="0.63899999856948853" blue="0.63499999046325684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ColorWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

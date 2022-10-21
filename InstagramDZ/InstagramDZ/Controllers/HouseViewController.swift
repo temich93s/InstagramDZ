@@ -54,11 +54,13 @@ final class HouseViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: - Private Methods
+    // MARK: - Private Action Methods
     
     @objc private func refreshAction() {
         refreshControl.endRefreshing()
     }
+    
+    // MARK: - Private Methods
     
     private func setupUI() {
         setupHouseVC()
