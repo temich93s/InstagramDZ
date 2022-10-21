@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentsCell" rowHeight="171" id="KGk-i7-Jjw" customClass="CommentsTableViewCell" customModule="InstagramDZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FriendlyPerson" translatesAutoresizingMaskIntoConstraints="NO" id="VMz-K1-d76">
+                        <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="KCp-nu-DlR"/>
+                            <constraint firstAttribute="height" constant="50" id="zeA-h5-dMx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-Ei-cbc">
+                        <rect key="frame" x="60" y="10" width="200" height="151"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8qu-Os-C5z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" name="ColorWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drive" translatesAutoresizingMaskIntoConstraints="NO" id="xAG-dz-J3v">
+                        <rect key="frame" x="270" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="pJy-js-3MD"/>
+                            <constraint firstAttribute="width" constant="50" id="tLX-8E-w4D"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="ColorBlack"/>
+                <constraints>
+                    <constraint firstItem="xAG-dz-J3v" firstAttribute="leading" secondItem="L0P-Ei-cbc" secondAttribute="trailing" constant="10" id="9e7-BA-BpR"/>
+                    <constraint firstItem="VMz-K1-d76" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BLF-V3-vqT"/>
+                    <constraint firstAttribute="height" secondItem="L0P-Ei-cbc" secondAttribute="height" constant="20" id="EIG-tW-2C0"/>
+                    <constraint firstItem="VMz-K1-d76" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fpy-nJ-idp"/>
+                    <constraint firstItem="L0P-Ei-cbc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LAX-Li-UaP"/>
+                    <constraint firstItem="L0P-Ei-cbc" firstAttribute="leading" secondItem="VMz-K1-d76" secondAttribute="trailing" constant="10" id="YyX-oW-hF7"/>
+                    <constraint firstAttribute="trailing" secondItem="xAG-dz-J3v" secondAttribute="trailing" id="Zzp-g0-k9F"/>
+                    <constraint firstItem="xAG-dz-J3v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="p9f-49-VSC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentLabel" destination="L0P-Ei-cbc" id="mqn-oc-tbH"/>
+                <outlet property="friendLogoImageView" destination="VMz-K1-d76" id="5hM-Go-ynG"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="103.45982142857143"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Drive" width="2880" height="1620"/>
+        <image name="FriendlyPerson" width="1440" height="810"/>
+        <namedColor name="ColorBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

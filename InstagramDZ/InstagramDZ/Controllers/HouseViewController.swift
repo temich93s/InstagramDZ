@@ -13,7 +13,7 @@ final class HouseViewController: UIViewController {
     
     // MARK: - Enum
     
-    enum TableCellsTypes {
+    private enum TableCellsTypes {
         case stories
         case posts
         case recomendations
@@ -54,13 +54,11 @@ final class HouseViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: - Private Action Methods
+    // MARK: - Private Methods
     
     @objc private func refreshAction() {
         refreshControl.endRefreshing()
     }
-    
-    // MARK: - Private Methods
     
     private func setupUI() {
         setupHouseVC()
