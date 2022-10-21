@@ -54,13 +54,11 @@ final class HouseViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: - Private Action Methods
+    // MARK: - Private Methods
     
     @objc private func refreshAction() {
         refreshControl.endRefreshing()
     }
-    
-    // MARK: - Private Methods
     
     private func setupUI() {
         setupHouseVC()
@@ -88,7 +86,7 @@ final class HouseViewController: UIViewController {
         homeTableView.addSubview(refreshControl)
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        homeTableView.rowHeight = UITableView.automaticDimension
+            // homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.register(
             UINib(nibName: Constants.storiesCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.storiesCellIdentifier

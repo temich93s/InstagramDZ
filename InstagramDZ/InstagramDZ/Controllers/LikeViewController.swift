@@ -44,7 +44,7 @@ final class LikeViewController: UIViewController {
     // MARK: - Private Visual Properties
     
     @IBOutlet weak private var likeTableView: UITableView!
-    @IBOutlet weak var mainHeaderLabel: UILabel!
+    @IBOutlet weak private var mainHeaderLabel: UILabel!
     
     private let refreshControl = UIRefreshControl()
     
@@ -61,14 +61,12 @@ final class LikeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-
-    // MARK: - Private Action Methods
+    
+    // MARK: - Private Methods
     
     @objc private func refreshAction() {
         refreshControl.endRefreshing()
     }
-    
-    // MARK: - Private Methods
     
     private func setupUI() {
         setupLikeVC()
