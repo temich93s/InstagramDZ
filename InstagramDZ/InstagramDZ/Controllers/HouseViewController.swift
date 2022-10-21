@@ -86,7 +86,7 @@ final class HouseViewController: UIViewController {
         homeTableView.addSubview(refreshControl)
         homeTableView.delegate = self
         homeTableView.dataSource = self
-            // homeTableView.rowHeight = UITableView.automaticDimension
+        homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.register(
             UINib(nibName: Constants.storiesCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.storiesCellIdentifier
