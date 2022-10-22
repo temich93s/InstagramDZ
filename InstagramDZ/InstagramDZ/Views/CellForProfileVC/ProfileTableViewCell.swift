@@ -14,7 +14,7 @@ final class ProfileTableViewCell: UITableViewCell {
     // MARK: - Constants
     
     private enum Constants {
-        static let colorColorDarkGray = "ColorDarkGray"
+        static let colorDarkGrayName = "ColorDarkGray"
     }
     
     // MARK: - IBOutlet
@@ -30,7 +30,7 @@ final class ProfileTableViewCell: UITableViewCell {
             circleView.layer.cornerRadius = circleView.frame.height / 2
             profilePhotoImageView.image = UIImage(named: safeProfileImageName)
             profilePhotoImageView.layer.cornerRadius = profilePhotoImageView.frame.height / 2
-            profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorColorDarkGray)?.cgColor
+            profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorDarkGrayName)?.cgColor
             profilePhotoImageView.layer.borderWidth = 1
         }
     }

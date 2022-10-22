@@ -39,6 +39,10 @@ final class SearchViewController: UIViewController {
         static let recomedationImageName = "Recomedation"
         static let retrowaveImageName = "Retrowave"
         static let friendlyPersonImageName = "FriendlyPerson"
+        static let driveStoryName = "Drive"
+        static let recomedationStoryName = "Recomedation"
+        static let retrowaveStoryName = "Retrowave"
+        static let friendlyPersonStoryName = "FriendlyPerson"
         static let profileImageName = "Retrowave"
         static let personName = "Майк"
         static let professionName = "Программист"
@@ -49,7 +53,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Private Visual Properties
     
     @IBOutlet weak private var profileTableView: UITableView!
-    
+
     private let refreshControl = UIRefreshControl()
     
     // MARK: - Private Properties
@@ -81,6 +85,24 @@ final class SearchViewController: UIViewController {
         descriptionText: Constants.descriptionText,
         subscribesText: Constants.subscribesText
     )
+    private let profileStory = [
+        ProfileStory(storyImageName: Constants.driveImageName,
+                     storyName: Constants.driveStoryName),
+        ProfileStory(storyImageName: Constants.retrowaveImageName,
+                     storyName: Constants.retrowaveStoryName),
+        ProfileStory(storyImageName: Constants.recomedationImageName,
+                     storyName: Constants.recomedationStoryName),
+        ProfileStory(storyImageName: Constants.friendlyPersonImageName,
+                     storyName: Constants.friendlyPersonStoryName),
+        ProfileStory(storyImageName: Constants.friendlyPersonImageName,
+                     storyName: Constants.friendlyPersonStoryName),
+        ProfileStory(storyImageName: Constants.recomedationImageName,
+                     storyName: Constants.recomedationStoryName),
+        ProfileStory(storyImageName: Constants.driveImageName,
+                     storyName: Constants.driveStoryName),
+        ProfileStory(storyImageName: Constants.retrowaveImageName,
+                     storyName: Constants.retrowaveImageName),
+    ]
     
     // MARK: - Lifecycle
     
@@ -133,6 +155,8 @@ final class SearchViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,20 +167,18 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableCells[indexPath.row]
         switch cell {
         case .profile:
-            guard
-                let profileCell = profileTableView.dequeueReusableCell(
-                    withIdentifier: Constants.profileCellIdentifier,
-                    for: indexPath) as? ProfileTableViewCell
+            guard let profileCell = profileTableView.dequeueReusableCell(
+                withIdentifier: Constants.profileCellIdentifier,
+                for: indexPath) as? ProfileTableViewCell
             else {
                 return UITableViewCell()
             }
             profileCell.profileDescription = profileDescription
             return profileCell
         case .postCollection:
-            guard
-                let postCollectionCell = profileTableView.dequeueReusableCell(
-                    withIdentifier: Constants.postCollectionCellIdentifier,
-                    for: indexPath) as? PostCollectionTableViewCell
+            guard let postCollectionCell = profileTableView.dequeueReusableCell(
+                withIdentifier: Constants.postCollectionCellIdentifier,
+                for: indexPath) as? PostCollectionTableViewCell
             else {
                 return UITableViewCell()
             }
@@ -165,22 +187,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
                 (view.bounds.width - 2) / 3 * CGFloat(lroundf(Float(postCollection.count) / 3))
             return postCollectionCell
         case .storiesProfile:
-            guard
-                let postCollectionCell = profileTableView.dequeueReusableCell(
-                    withIdentifier: Constants.profileStoriesCellIdentifier,
-                    for: indexPath) as? ProfileStoriesTableViewCell
+            guard let postCollectionCell = profileTableView.dequeueReusableCell(
+                withIdentifier: Constants.profileStoriesCellIdentifier,
+                for: indexPath) as? ProfileStoriesTableViewCell
             else {
                 return UITableViewCell()
             }
+            postCollectionCell.profileStory = profileStory
             return postCollectionCell
         case .descriptonProfile:
-            guard
-                let descriptonProfileCell = profileTableView.dequeueReusableCell(
-                    withIdentifier: Constants.descriptonProfileCellIdentifier,
-                    for: indexPath) as? DescriptonProfileTableViewCell
+            guard let descriptonProfileCell = profileTableView.dequeueReusableCell(
+                withIdentifier: Constants.descriptonProfileCellIdentifier,
+                for: indexPath) as? DescriptonProfileTableViewCell
             else {
                 return UITableViewCell()
             }
+            descriptonProfileCell.profileDescription = profileDescription
             return descriptonProfileCell
         }
     }

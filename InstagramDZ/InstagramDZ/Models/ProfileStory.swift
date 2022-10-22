@@ -12,5 +12,5 @@ import Foundation
 /// - nameStroryName: Имя истории
 struct ProfileStory {
     var storyImageName = ""
-    var nameStroryName = ""
+    var storyName = ""
 }

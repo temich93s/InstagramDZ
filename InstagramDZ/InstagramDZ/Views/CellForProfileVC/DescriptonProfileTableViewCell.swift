@@ -28,39 +28,32 @@ final class DescriptonProfileTableViewCell: UITableViewCell {
     @IBOutlet weak private var writeButton: UIButton!
     @IBOutlet weak private var moreInformationButton: UIButton!
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
-    private let profileDescription = ProfileDescription()
-    
-    // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupUI()
-    }
-    
-    // MARK: - Private Methods
-    
-    private func setupUI() {
-        subscribeButton.layer.cornerRadius = subscribeButton.frame.height / 4
-        namePersonLabel.text = profileDescription.personName
-        professionLabel.text = profileDescription.professionName
-        descriptionLabel.text = profileDescription.descriptionText
-        
-        let attribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
-        let attributeText = NSMutableAttributedString(string: Constants.prefixText)
-        attributeText.append(
-            NSMutableAttributedString(string: profileDescription.subscribesText, attributes: attribute))
-        
-        subscribesLabel.attributedText = attributeText
-        
-        writeButton.layer.cornerRadius = writeButton.frame.height / 4
-        writeButton.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
-        writeButton.layer.borderWidth = 1
-        
-        moreInformationButton.layer.cornerRadius = moreInformationButton.frame.height / 4
-        moreInformationButton.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
-        moreInformationButton.layer.borderWidth = 1
+    var profileDescription: ProfileDescription? {
+        didSet {
+            guard
+                let safePersonName = profileDescription?.personName,
+                let safeProfessionName = profileDescription?.professionName,
+                let safeDescriptionText = profileDescription?.descriptionText,
+                let safeSubscribesText = profileDescription?.subscribesText
+            else { return }
+            let attribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
+            let attributeText = NSMutableAttributedString(string: Constants.prefixText)
+            subscribeButton.layer.cornerRadius = subscribeButton.frame.height / 4
+            namePersonLabel.text = safePersonName
+            professionLabel.text = safeProfessionName
+            descriptionLabel.text = safeDescriptionText
+            attributeText.append(
+                NSMutableAttributedString(string: safeSubscribesText, attributes: attribute))
+            subscribesLabel.attributedText = attributeText
+            writeButton.layer.cornerRadius = writeButton.frame.height / 4
+            writeButton.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
+            writeButton.layer.borderWidth = 1
+            moreInformationButton.layer.cornerRadius = moreInformationButton.frame.height / 4
+            moreInformationButton.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
+            moreInformationButton.layer.borderWidth = 1
+        }
     }
     
 }

@@ -22,6 +22,10 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var postCollectionView: UICollectionView!
     
+    // MARK: - Public Properties
+    
+    var profileStory: [ProfileStory]?
+    
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
@@ -41,11 +45,13 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
     
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+
 extension ProfileStoriesTableViewCell:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return profileStory?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -56,6 +62,7 @@ extension ProfileStoriesTableViewCell:
         else {
             return UICollectionViewCell()
         }
+        itemCell.profileStory = profileStory?[indexPath.row]
         return itemCell
     }
     
