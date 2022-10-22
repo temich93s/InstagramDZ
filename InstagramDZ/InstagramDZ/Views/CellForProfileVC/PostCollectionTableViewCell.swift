@@ -21,6 +21,18 @@ final class PostCollectionTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     
     @IBOutlet weak private var postCollectionView: UICollectionView!
+    @IBOutlet weak private var mainView: UIView!
+    
+    // MARK: - Private Methods
+    
+    var viewWidth: CGFloat? {
+        didSet {
+            postCollectionView.translatesAutoresizingMaskIntoConstraints = false
+            if let safeViewWidth = viewWidth {
+                postCollectionView.heightAnchor.constraint(equalToConstant: safeViewWidth).isActive = true
+            }
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -37,6 +49,8 @@ final class PostCollectionTableViewCell: UITableViewCell {
         postCollectionView.register(
             UINib(nibName: Constants.postForCollectionCellNibName, bundle: nil),
             forCellWithReuseIdentifier: Constants.postForCollectionCellIdentifier)
+//        postCollectionView.translatesAutoresizingMaskIntoConstraints = false
+//        postCollectionView.heightAnchor.constraint(equalToConstant: viewWidth).isActive = true
     }
 }
 
@@ -61,6 +75,7 @@ extension PostCollectionTableViewCell:
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print(collectionView.bounds.width)
         return CGSize(width: (collectionView.bounds.width - 2) / 3, height: (collectionView.bounds.width - 2) / 3)
     }
     

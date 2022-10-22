@@ -124,6 +124,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
+            postCollectionCell.viewWidth = view.bounds.width
             return postCollectionCell
         case .storiesProfile:
             guard

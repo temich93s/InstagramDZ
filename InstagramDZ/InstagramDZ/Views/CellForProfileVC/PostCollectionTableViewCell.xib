@@ -13,12 +13,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCollectionCell" rowHeight="193" id="KGk-i7-Jjw" customClass="PostCollectionTableViewCell" customModule="InstagramDZ" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icF-3Y-J8S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Fp-de-HUi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -52,8 +52,8 @@
                                     <constraint firstAttribute="height" constant="50" id="lT0-jY-Mh8"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-lB-Y2e">
-                                <rect key="frame" x="0.0" y="50" width="320" height="450"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-lB-Y2e">
+                                <rect key="frame" x="0.0" y="50" width="320" height="143"/>
                                 <color key="backgroundColor" name="ColorBlack"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="FLY-NP-4Q6">
                                     <size key="itemSize" width="128" height="128"/>
@@ -68,7 +68,6 @@
                             <constraint firstItem="2bG-lB-Y2e" firstAttribute="leading" secondItem="icF-3Y-J8S" secondAttribute="leading" id="J3K-jg-SWf"/>
                             <constraint firstItem="6Fp-de-HUi" firstAttribute="top" secondItem="icF-3Y-J8S" secondAttribute="top" id="RkC-kV-hDb"/>
                             <constraint firstAttribute="trailing" secondItem="6Fp-de-HUi" secondAttribute="trailing" id="TkQ-Ax-1O2"/>
-                            <constraint firstAttribute="height" constant="500" id="fQT-c0-X6E"/>
                             <constraint firstItem="6Fp-de-HUi" firstAttribute="leading" secondItem="icF-3Y-J8S" secondAttribute="leading" id="ijT-C2-4kZ"/>
                             <constraint firstAttribute="bottom" secondItem="2bG-lB-Y2e" secondAttribute="bottom" id="kPR-0w-c1o"/>
                             <constraint firstItem="2bG-lB-Y2e" firstAttribute="top" secondItem="6Fp-de-HUi" secondAttribute="bottom" id="wFc-0B-azS"/>
@@ -85,7 +84,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="postCollectionView" destination="2bG-lB-Y2e" id="3XA-4p-IFN"/>
+                <outlet property="mainView" destination="icF-3Y-J8S" id="feE-cZ-0AF"/>
+                <outlet property="postCollectionView" destination="2bG-lB-Y2e" id="VRX-bc-3nf"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="110.82589285714285"/>
         </tableViewCell>

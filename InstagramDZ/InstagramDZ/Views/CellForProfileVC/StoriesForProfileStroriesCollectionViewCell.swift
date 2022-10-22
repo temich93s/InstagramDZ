@@ -11,6 +11,12 @@ import UIKit
 
 final class StoriesForProfileStroriesCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let colorLightGrayName = "ColorLightGray"
+    }
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak private var storyImageView: UIImageView!
@@ -32,6 +38,10 @@ final class StoriesForProfileStroriesCollectionViewCell: UICollectionViewCell {
     private func setupUI() {
         storyImageView.image = UIImage(named: profileStory.storyImageName)
         nameStroryLabel.text = profileStory.nameStroryName
+        
+        storyImageView.layer.cornerRadius = storyImageView.frame.height / 2
+        storyImageView.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
+        storyImageView.layer.borderWidth = 2
     }
 
 }
