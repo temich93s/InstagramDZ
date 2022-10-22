@@ -23,14 +23,17 @@ final class PostCollectionTableViewCell: UITableViewCell {
     @IBOutlet weak private var postCollectionView: UICollectionView!
     @IBOutlet weak private var mainView: UIView!
     
+    // MARK: - Public Properties
+    
+    var postCollection: [Post]?
+    
     // MARK: - Private Methods
     
-    var viewWidth: CGFloat? {
+    var viewHight: CGFloat? {
         didSet {
+            guard let safeViewHight = viewHight else { return }
             postCollectionView.translatesAutoresizingMaskIntoConstraints = false
-            if let safeViewWidth = viewWidth {
-                postCollectionView.heightAnchor.constraint(equalToConstant: safeViewWidth).isActive = true
-            }
+            postCollectionView.heightAnchor.constraint(equalToConstant: safeViewHight).isActive = true
         }
     }
     
@@ -49,16 +52,16 @@ final class PostCollectionTableViewCell: UITableViewCell {
         postCollectionView.register(
             UINib(nibName: Constants.postForCollectionCellNibName, bundle: nil),
             forCellWithReuseIdentifier: Constants.postForCollectionCellIdentifier)
-//        postCollectionView.translatesAutoresizingMaskIntoConstraints = false
-//        postCollectionView.heightAnchor.constraint(equalToConstant: viewWidth).isActive = true
     }
 }
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension PostCollectionTableViewCell:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return postCollection?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -69,13 +72,13 @@ extension PostCollectionTableViewCell:
         else {
             return UICollectionViewCell()
         }
+        itemCell.post = postCollection?[indexPath.row]
         return itemCell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print(collectionView.bounds.width)
         return CGSize(width: (collectionView.bounds.width - 2) / 3, height: (collectionView.bounds.width - 2) / 3)
     }
     

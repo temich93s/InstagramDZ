@@ -35,6 +35,15 @@ final class SearchViewController: UIViewController {
         static let profileStoriesCellIdentifier = "ProfileStoriesCell"
         static let imageMagnifyingglassCircleName = "magnifyingglass.circle"
         static let imageMagnifyingglassCircleFillName = "magnifyingglass.circle.fill"
+        static let driveImageName = "Drive"
+        static let recomedationImageName = "Recomedation"
+        static let retrowaveImageName = "Retrowave"
+        static let friendlyPersonImageName = "FriendlyPerson"
+        static let profileImageName = "Retrowave"
+        static let personName = "Майк"
+        static let professionName = "Программист"
+        static let descriptionText = "Не сдавайся, все будет хорошо"
+        static let subscribesText = "oldfriend"
     }
     
     // MARK: - Private Visual Properties
@@ -46,6 +55,32 @@ final class SearchViewController: UIViewController {
     // MARK: - Private Properties
     
     private var tableCells: [TableCellsTypes] = [.profile, .descriptonProfile, .storiesProfile, .postCollection]
+    private let postCollection = [
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.recomedationImageName),
+        Post(postImageName: Constants.recomedationImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.retrowaveImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.friendlyPersonImageName),
+        Post(postImageName: Constants.friendlyPersonImageName),
+        Post(postImageName: Constants.retrowaveImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.recomedationImageName),
+        Post(postImageName: Constants.driveImageName),
+        Post(postImageName: Constants.retrowaveImageName),
+        Post(postImageName: Constants.retrowaveImageName),
+        Post(postImageName: Constants.friendlyPersonImageName)
+    ]
+    private let profileDescription = ProfileDescription(
+        profileImageName: Constants.profileImageName,
+        personName: Constants.personName,
+        professionName: Constants.professionName,
+        descriptionText: Constants.descriptionText,
+        subscribesText: Constants.subscribesText
+    )
     
     // MARK: - Lifecycle
     
@@ -115,6 +150,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
+            profileCell.profileDescription = profileDescription
             return profileCell
         case .postCollection:
             guard
@@ -124,7 +160,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            postCollectionCell.viewWidth = view.bounds.width
+            postCollectionCell.postCollection = postCollection
+            postCollectionCell.viewHight =
+                (view.bounds.width - 2) / 3 * CGFloat(lroundf(Float(postCollection.count) / 3))
             return postCollectionCell
         case .storiesProfile:
             guard

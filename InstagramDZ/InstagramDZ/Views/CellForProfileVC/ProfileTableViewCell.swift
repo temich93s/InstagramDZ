@@ -22,20 +22,17 @@ final class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak private var circleView: UIView!
     @IBOutlet weak private var profilePhotoImageView: UIImageView!
     
-    // MARK: - Lifecycle
+    // MARK: - Public Properties
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupUI()
-    }
-    
-    // MARK: - Private Methods
-    
-    private func setupUI() {
-        circleView.layer.cornerRadius = circleView.frame.height / 2
-        profilePhotoImageView.layer.cornerRadius = profilePhotoImageView.frame.height / 2
-        profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorColorDarkGray)?.cgColor
-        profilePhotoImageView.layer.borderWidth = 1
+    var profileDescription: ProfileDescription? {
+        didSet {
+            guard let safeProfileImageName = profileDescription?.profileImageName else { return }
+            circleView.layer.cornerRadius = circleView.frame.height / 2
+            profilePhotoImageView.image = UIImage(named: safeProfileImageName)
+            profilePhotoImageView.layer.cornerRadius = profilePhotoImageView.frame.height / 2
+            profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorColorDarkGray)?.cgColor
+            profilePhotoImageView.layer.borderWidth = 1
+        }
     }
     
 }

@@ -15,21 +15,13 @@ final class PostForPostCollectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak private var postImageView: UIImageView!
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
-    private let post = Post()
-    
-    // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupUI()
+    var post: Post? {
+        didSet {
+            guard let safeImageName = post?.postImageName else { return }
+            postImageView.image = UIImage(named: safeImageName)
+        }
     }
     
-    // MARK: - Private Methods
-    
-    private func setupUI() {
-        postImageView.image = UIImage(named: post.postImageName)
-    }
-
 }

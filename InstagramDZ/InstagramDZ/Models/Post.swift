@@ -10,5 +10,5 @@ import Foundation
 /// Post: посты пользователя
 /// - postImageName: Имя поста пользователя
 struct Post {
-    let postImageName = "Drive"
+    var postImageName = ""
 }

@@ -14,9 +14,9 @@ import Foundation
 /// - descriptionText: Описание пользователя
 /// - subscribesText: Подписчики
 struct ProfileDescription {
-    let profileImageName = "Retrowave"
-    let personName = "Майк"
-    let professionName = "Программист"
-    let descriptionText = "Нормально делай, нормально будет"
-    let subscribesText = "oldfriend"
+    var profileImageName = ""
+    var personName = ""
+    var professionName = ""
+    var descriptionText = ""
+    var subscribesText = ""
 }

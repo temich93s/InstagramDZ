@@ -11,6 +11,6 @@ import Foundation
 /// - storyImageName: Изображение истории
 /// - nameStroryName: Имя истории
 struct ProfileStory {
-    let storyImageName = "Recomedation"
-    let nameStroryName = "Drive"
+    var storyImageName = ""
+    var nameStroryName = ""
 }
