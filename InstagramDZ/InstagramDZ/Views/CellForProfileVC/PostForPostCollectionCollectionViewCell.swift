@@ -13,7 +13,7 @@ final class PostForPostCollectionCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlet
     
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak private var postImageView: UIImageView!
     
     // MARK: - Private Properties
     

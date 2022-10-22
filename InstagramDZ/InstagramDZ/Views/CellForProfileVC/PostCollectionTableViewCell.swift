@@ -20,19 +20,23 @@ final class PostCollectionTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var postCollectionView: UICollectionView!
+    @IBOutlet weak private var postCollectionView: UICollectionView!
     
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupUI()
+    }
+    
+    // MARK: - Private Methods
+
+    private func setupUI() {
         postCollectionView.delegate = self
         postCollectionView.dataSource = self
         postCollectionView.register(
             UINib(nibName: Constants.postForCollectionCellNibName, bundle: nil),
             forCellWithReuseIdentifier: Constants.postForCollectionCellIdentifier)
-        
     }
 }
 

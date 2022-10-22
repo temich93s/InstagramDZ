@@ -20,13 +20,13 @@ final class DescriptonProfileTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var namePersonLabel: UILabel!
-    @IBOutlet weak var professionLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var subscribesLabel: UILabel!
-    @IBOutlet weak var subscribeButton: UIButton!
-    @IBOutlet weak var writeButton: UIButton!
-    @IBOutlet weak var moreInformationButton: UIButton!
+    @IBOutlet weak private var namePersonLabel: UILabel!
+    @IBOutlet weak private var professionLabel: UILabel!
+    @IBOutlet weak private var descriptionLabel: UILabel!
+    @IBOutlet weak private var subscribesLabel: UILabel!
+    @IBOutlet weak private var subscribeButton: UIButton!
+    @IBOutlet weak private var writeButton: UIButton!
+    @IBOutlet weak private var moreInformationButton: UIButton!
     
     // MARK: - Private Properties
     
@@ -49,8 +49,8 @@ final class DescriptonProfileTableViewCell: UITableViewCell {
         
         let attribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
         let attributeText = NSMutableAttributedString(string: Constants.prefixText)
-        attributeText.append(NSMutableAttributedString(
-            string: profileDescription.subscribesText, attributes: attribute))
+        attributeText.append(
+            NSMutableAttributedString(string: profileDescription.subscribesText, attributes: attribute))
         
         subscribesLabel.attributedText = attributeText
         

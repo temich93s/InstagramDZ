@@ -3,21 +3,61 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProfileStoriesTableViewCell" customModule="InstagramDZ" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileStoriesCell" id="KGk-i7-Jjw" customClass="ProfileStoriesTableViewCell" customModule="InstagramDZ" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oak-3E-KrD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hVM-Ro-nS6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="beY-dJ-HID">
+                                    <size key="itemSize" width="80" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hVM-Ro-nS6" secondAttribute="trailing" id="GhD-yN-2NR"/>
+                            <constraint firstItem="hVM-Ro-nS6" firstAttribute="top" secondItem="oak-3E-KrD" secondAttribute="top" id="L2C-U1-Ey0"/>
+                            <constraint firstItem="hVM-Ro-nS6" firstAttribute="leading" secondItem="oak-3E-KrD" secondAttribute="leading" id="a37-eE-CKt"/>
+                            <constraint firstAttribute="height" constant="100" id="rnI-lb-qWT"/>
+                            <constraint firstAttribute="bottom" secondItem="hVM-Ro-nS6" secondAttribute="bottom" id="y9p-Ar-uGo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oak-3E-KrD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Wn-15-Q9s"/>
+                    <constraint firstItem="oak-3E-KrD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dXx-vM-8UL"/>
+                    <constraint firstAttribute="bottom" secondItem="oak-3E-KrD" secondAttribute="bottom" id="duo-qc-cOh"/>
+                    <constraint firstAttribute="trailing" secondItem="oak-3E-KrD" secondAttribute="trailing" id="vq5-fw-UjE"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="132" y="61"/>
+            <color key="backgroundColor" name="ColorBlack"/>
+            <connections>
+                <outlet property="postCollectionView" destination="hVM-Ro-nS6" id="Loj-nM-6DL"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="60.9375"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="ColorBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

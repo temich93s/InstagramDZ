@@ -54,29 +54,23 @@ final class HouseViewController: UIViewController {
         setupUI()
     }
     
-    // MARK: - Private Action Methods
+    // MARK: - Private Methods
     
     @objc private func refreshAction() {
         refreshControl.endRefreshing()
     }
     
-    // MARK: - Private Methods
-    
     private func setupUI() {
-        setupHouseVC()
         setupTabBar()
         setupRefreshControl()
         setupHomeTableView()
+        view.backgroundColor = UIColor(named: Constants.colorBlackName)
     }
     
     private func setupTabBar() {
         tabBarItem.image = UIImage(systemName: Constants.imageHouseName)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imageHouseFillName)
         tabBarController?.tabBar.unselectedItemTintColor = UIColor(named: Constants.colorWhiteName)
-    }
-    
-    private func setupHouseVC() {
-        view.backgroundColor = UIColor(named: Constants.colorBlackName)
     }
     
     private func setupRefreshControl() {

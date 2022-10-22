@@ -13,8 +13,8 @@ final class StoriesForProfileStroriesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var storyImageView: UIImageView!
-    @IBOutlet weak var nameStroryLabel: UILabel!
+    @IBOutlet weak private var storyImageView: UIImageView!
+    @IBOutlet weak private var nameStroryLabel: UILabel!
     
     // MARK: - Private Properties
     

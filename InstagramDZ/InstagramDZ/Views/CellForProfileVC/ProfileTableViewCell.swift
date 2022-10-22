@@ -19,8 +19,8 @@ final class ProfileTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var circleView: UIView!
-    @IBOutlet weak var profilePhotoImageView: UIImageView!
+    @IBOutlet weak private var circleView: UIView!
+    @IBOutlet weak private var profilePhotoImageView: UIImageView!
     
     // MARK: - Lifecycle
     

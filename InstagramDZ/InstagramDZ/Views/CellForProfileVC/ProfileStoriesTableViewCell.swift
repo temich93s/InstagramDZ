@@ -11,8 +11,32 @@ import UIKit
 
 final class ProfileStoriesTableViewCell: UITableViewCell {
 
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let storiesForProfileStroriesCollectionCellNibName = "StoriesForProfileStroriesCollectionViewCell"
+        static let storiesForProfileStroriesCollectionCellIdentifier = "StoriesForProfileStroriesCollectionCell"
+    }
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak private var postCollectionView: UICollectionView!
+    
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    // MARK: - Private Methods
+
+    private func setupUI() {
+        postCollectionView.delegate = self
+        postCollectionView.dataSource = self
+        postCollectionView.register(
+            UINib(nibName: Constants.storiesForProfileStroriesCollectionCellNibName, bundle: nil),
+            forCellWithReuseIdentifier: Constants.storiesForProfileStroriesCollectionCellIdentifier)
     }
     
 }
@@ -21,24 +45,24 @@ extension ProfileStoriesTableViewCell:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let itemCell = collectionView.dequeueReusableCell(
-//            withReuseIdentifier: Constants.postForCollectionCellIdentifier,
-//            for: indexPath) as? PostForPostCollectionCollectionViewCell
-//        else {
+        guard let itemCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Constants.storiesForProfileStroriesCollectionCellIdentifier,
+            for: indexPath) as? StoriesForProfileStroriesCollectionViewCell
+        else {
             return UICollectionViewCell()
-//        }
-//        return itemCell
+        }
+        return itemCell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width - 2) / 3, height: (collectionView.bounds.width - 2) / 3)
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 100, height: 100)
+//    }
     
 }
