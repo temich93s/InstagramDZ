@@ -23,25 +23,23 @@ final class PostCollectionTableViewCell: UITableViewCell {
     @IBOutlet weak private var postCollectionView: UICollectionView!
     @IBOutlet weak private var mainView: UIView!
     
-    // MARK: - Public Properties
+    // MARK: - Private Properties
     
-    var postCollection: [Post]?
-    
-    // MARK: - Private Methods
-    
-    var viewHight: CGFloat? {
-        didSet {
-            guard let safeViewHight = viewHight else { return }
-            postCollectionView.translatesAutoresizingMaskIntoConstraints = false
-            postCollectionView.heightAnchor.constraint(equalToConstant: safeViewHight).isActive = true
-        }
-    }
+    private var postCollection: [Post]?
     
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+    }
+    
+    // MARK: - Public Methods
+    
+    func configureCell(postCollection: [Post], viewHight: CGFloat) {
+        self.postCollection = postCollection
+        postCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        postCollectionView.heightAnchor.constraint(equalToConstant: viewHight).isActive = true
     }
     
     // MARK: - Private Methods
@@ -72,7 +70,7 @@ extension PostCollectionTableViewCell:
         else {
             return UICollectionViewCell()
         }
-        itemCell.post = postCollection?[indexPath.row]
+        itemCell.configureCell(post: postCollection?[indexPath.row])
         return itemCell
     }
     

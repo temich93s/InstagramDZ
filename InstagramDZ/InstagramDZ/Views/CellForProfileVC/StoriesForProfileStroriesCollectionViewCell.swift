@@ -22,20 +22,18 @@ final class StoriesForProfileStroriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var storyImageView: UIImageView!
     @IBOutlet weak private var nameStroryLabel: UILabel!
     
-    // MARK: - Public Properties
+    // MARK: - Public Methods
     
-    var profileStory: ProfileStory? {
-        didSet {
-            guard
-                let safeStoryImageName = profileStory?.storyImageName,
-                let safeStoryName = profileStory?.storyName
-            else { return }
-            storyImageView.image = UIImage(named: safeStoryImageName)
-            nameStroryLabel.text = safeStoryName
-            storyImageView.layer.cornerRadius = storyImageView.frame.height / 2
-            storyImageView.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
-            storyImageView.layer.borderWidth = 2
-        }
+    func configureCell(profileStory: ProfileStory?) {
+        guard
+            let safeStoryImageName = profileStory?.storyImageName,
+            let safeStoryName = profileStory?.storyName
+        else { return }
+        storyImageView.image = UIImage(named: safeStoryImageName)
+        nameStroryLabel.text = safeStoryName
+        storyImageView.layer.cornerRadius = storyImageView.frame.height / 2
+        storyImageView.layer.borderColor = UIColor(named: Constants.colorLightGrayName)?.cgColor
+        storyImageView.layer.borderWidth = 2
     }
 
 }

@@ -33,6 +33,12 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
         setupUI()
     }
     
+    // MARK: - Public Methods
+    
+    func configureCell(profileStory: [ProfileStory]) {
+        self.profileStory = profileStory
+    }
+    
     // MARK: - Private Methods
 
     private func setupUI() {
@@ -42,7 +48,7 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
             UINib(nibName: Constants.storiesForProfileStroriesCollectionCellNibName, bundle: nil),
             forCellWithReuseIdentifier: Constants.storiesForProfileStroriesCollectionCellIdentifier)
     }
-    
+
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -62,7 +68,7 @@ extension ProfileStoriesTableViewCell:
         else {
             return UICollectionViewCell()
         }
-        itemCell.profileStory = profileStory?[indexPath.row]
+        itemCell.configureCell(profileStory: profileStory?[indexPath.row])
         return itemCell
     }
     

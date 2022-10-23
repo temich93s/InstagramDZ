@@ -22,17 +22,14 @@ final class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak private var circleView: UIView!
     @IBOutlet weak private var profilePhotoImageView: UIImageView!
     
-    // MARK: - Public Properties
+    // MARK: - Public Methods
     
-    var profileDescription: ProfileDescription? {
-        didSet {
-            guard let safeProfileImageName = profileDescription?.profileImageName else { return }
-            circleView.layer.cornerRadius = circleView.frame.height / 2
-            profilePhotoImageView.image = UIImage(named: safeProfileImageName)
-            profilePhotoImageView.layer.cornerRadius = profilePhotoImageView.frame.height / 2
-            profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorDarkGrayName)?.cgColor
-            profilePhotoImageView.layer.borderWidth = 1
-        }
+    func configureCell(profileDescription: ProfileDescription) {
+        circleView.layer.cornerRadius = circleView.frame.height / 2
+        profilePhotoImageView.image = UIImage(named: profileDescription.profileImageName)
+        profilePhotoImageView.layer.cornerRadius = profilePhotoImageView.frame.height / 2
+        profilePhotoImageView.layer.borderColor = UIColor(named: Constants.colorDarkGrayName)?.cgColor
+        profilePhotoImageView.layer.borderWidth = 1
     }
     
 }

@@ -15,13 +15,11 @@ final class PostForPostCollectionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak private var postImageView: UIImageView!
     
-    // MARK: - Public Properties
+    // MARK: - Public Methods
     
-    var post: Post? {
-        didSet {
-            guard let safeImageName = post?.postImageName else { return }
-            postImageView.image = UIImage(named: safeImageName)
-        }
+    func configureCell(post: Post?) {
+        guard let safeImageName = post?.postImageName else { return }
+        postImageView.image = UIImage(named: safeImageName)
     }
     
 }

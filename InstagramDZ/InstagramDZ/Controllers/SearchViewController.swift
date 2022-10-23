@@ -173,7 +173,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            profileCell.profileDescription = profileDescription
+            profileCell.configureCell(profileDescription: profileDescription)
             return profileCell
         case .postCollection:
             guard let postCollectionCell = profileTableView.dequeueReusableCell(
@@ -182,19 +182,18 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            postCollectionCell.postCollection = postCollection
-            postCollectionCell.viewHight =
-                (view.bounds.width - 2) / 3 * CGFloat(lroundf(Float(postCollection.count) / 3))
+            let viewHight = (view.bounds.width - 2) / 3 * CGFloat(lroundf(Float(postCollection.count) / 3))
+            postCollectionCell.configureCell(postCollection: postCollection, viewHight: viewHight)
             return postCollectionCell
         case .storiesProfile:
-            guard let postCollectionCell = profileTableView.dequeueReusableCell(
+            guard let storiesProfileCell = profileTableView.dequeueReusableCell(
                 withIdentifier: Constants.profileStoriesCellIdentifier,
                 for: indexPath) as? ProfileStoriesTableViewCell
             else {
                 return UITableViewCell()
             }
-            postCollectionCell.profileStory = profileStory
-            return postCollectionCell
+            storiesProfileCell.configureCell(profileStory: profileStory)
+            return storiesProfileCell
         case .descriptonProfile:
             guard let descriptonProfileCell = profileTableView.dequeueReusableCell(
                 withIdentifier: Constants.descriptonProfileCellIdentifier,
@@ -202,7 +201,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            descriptonProfileCell.profileDescription = profileDescription
+            descriptonProfileCell.configureCell(profileDescription: profileDescription)
             return descriptonProfileCell
         }
     }
