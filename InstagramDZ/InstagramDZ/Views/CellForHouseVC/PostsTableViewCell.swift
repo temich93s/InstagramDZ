@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с постами
+/// Ячейка с постами
 
 final class PostsTableViewCell: UITableViewCell {
     

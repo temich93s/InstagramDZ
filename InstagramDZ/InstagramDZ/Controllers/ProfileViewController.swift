@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Cтраница профиля пользователя
+/// Cтраница профиля пользователя
 
 final class ProfileViewController: UIViewController {
 
@@ -33,4 +33,5 @@ final class ProfileViewController: UIViewController {
         tabBarItem.image = UIImage(systemName: Constants.imagePersonCircleName)
         tabBarItem.selectedImage = UIImage(systemName: Constants.imagePersonCircleFillName)
     }
+    
 }

@@ -109,11 +109,71 @@
                     <view key="view" contentMode="scaleToFill" id="IFi-jJ-ccI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="d7A-LL-bUf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-ft-v09">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxq-uS-xCi">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="dJH-rV-Ynb"/>
+                                        </constraints>
+                                        <color key="tintColor" name="ColorWhite"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myprofile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-eY-NJW">
+                                        <rect key="frame" x="50" y="0.0" width="314" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" name="ColorWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-pW-E8D">
+                                        <rect key="frame" x="364" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="PMf-yp-MEv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
+                                            <color key="baseForegroundColor" name="ColorWhite"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6MT-M1-gID"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ngy-tt-Vgf">
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <color key="backgroundColor" name="ColorBlack"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="o6K-hD-ui0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fdy-ft-v09" firstAttribute="top" secondItem="d7A-LL-bUf" secondAttribute="bottom" id="OJG-zh-8D2"/>
+                            <constraint firstAttribute="bottom" secondItem="ngy-tt-Vgf" secondAttribute="bottom" id="UFm-4b-Vnl"/>
+                            <constraint firstItem="ngy-tt-Vgf" firstAttribute="leading" secondItem="o6K-hD-ui0" secondAttribute="leading" id="UMo-GQ-Yoe"/>
+                            <constraint firstItem="ngy-tt-Vgf" firstAttribute="top" secondItem="fdy-ft-v09" secondAttribute="bottom" id="Wun-KC-pxb"/>
+                            <constraint firstItem="o6K-hD-ui0" firstAttribute="trailing" secondItem="fdy-ft-v09" secondAttribute="trailing" id="cy0-uH-Q8B"/>
+                            <constraint firstAttribute="trailing" secondItem="ngy-tt-Vgf" secondAttribute="trailing" id="dan-so-WcP"/>
+                            <constraint firstItem="fdy-ft-v09" firstAttribute="leading" secondItem="o6K-hD-ui0" secondAttribute="leading" id="gfb-Mw-GEA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass.circle" catalog="system" id="F6j-1S-ezf"/>
                     <navigationItem key="navigationItem" id="a0h-cH-I4n"/>
+                    <connections>
+                        <outlet property="profileTableView" destination="ngy-tt-Vgf" id="seD-et-LXb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0g-o1-PbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,10 +268,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W32-IN-aye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3710" y="-560"/>
+            <point key="canvasLocation" x="3749" y="-560"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>

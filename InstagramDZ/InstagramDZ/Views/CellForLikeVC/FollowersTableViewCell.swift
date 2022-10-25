@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с новыми подписчиками
+/// Ячейка с новыми подписчиками
 
 final class FollowersTableViewCell: UITableViewCell {
     
@@ -36,11 +36,7 @@ final class FollowersTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     
     private func setupUI() {
-        setupCommentLabel()
         friendLogoImageView.layer.cornerRadius = friendLogoImageView.frame.height / 2
-    }
-    
-    private func setupCommentLabel() {
         guard let colorLightGray = UIColor(named: Constants.colorLightGrayName) else { return }
         let friendNameAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
         let friendNameAttributeText = NSMutableAttributedString(

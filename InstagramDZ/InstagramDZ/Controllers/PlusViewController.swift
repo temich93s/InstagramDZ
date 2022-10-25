@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Cтраница добавления поста
+/// Cтраница добавления поста
 
 final class PlusViewController: UIViewController {
 

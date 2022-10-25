@@ -50,8 +50,8 @@
                     <constraint firstItem="eM8-sc-SGa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3TE-Rk-DkE"/>
                     <constraint firstItem="eM8-sc-SGa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CSI-Ul-wvW"/>
                     <constraint firstItem="SWG-s5-ePN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Cd7-kr-7vE"/>
+                    <constraint firstItem="ZBV-3G-cSX" firstAttribute="centerY" secondItem="SWG-s5-ePN" secondAttribute="centerY" id="RbQ-aV-1UJ"/>
                     <constraint firstAttribute="trailing" secondItem="ZBV-3G-cSX" secondAttribute="trailing" id="ZKf-4h-say"/>
-                    <constraint firstItem="ZBV-3G-cSX" firstAttribute="centerY" secondItem="SWG-s5-ePN" secondAttribute="centerY" id="pWD-uT-UfM"/>
                     <constraint firstAttribute="height" secondItem="SWG-s5-ePN" secondAttribute="height" constant="20" id="pbo-Q2-HSM"/>
                     <constraint firstItem="SWG-s5-ePN" firstAttribute="leading" secondItem="eM8-sc-SGa" secondAttribute="trailing" constant="10" id="qwL-f7-PZK"/>
                     <constraint firstItem="ZBV-3G-cSX" firstAttribute="leading" secondItem="SWG-s5-ePN" secondAttribute="trailing" constant="10" id="wTy-47-lWi"/>

@@ -15,6 +15,25 @@
 		AA34143A28FD88E300DBDF33 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA34143828FD88E300DBDF33 /* PostsTableViewCell.xib */; };
 		AA34143D28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34143B28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift */; };
 		AA34143E28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */; };
+		AA665D6A290266A800A77A0D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D68290266A800A77A0D /* ProfileTableViewCell.swift */; };
+		AA665D6B290266A800A77A0D /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D69290266A800A77A0D /* ProfileTableViewCell.xib */; };
+		AA665D6E29026CC500A77A0D /* PostCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D6C29026CC500A77A0D /* PostCollectionTableViewCell.swift */; };
+		AA665D6F29026CC500A77A0D /* PostCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D6D29026CC500A77A0D /* PostCollectionTableViewCell.xib */; };
+		AA665D752902784800A77A0D /* PostForPostCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D732902784800A77A0D /* PostForPostCollectionCollectionViewCell.swift */; };
+		AA665D762902784800A77A0D /* PostForPostCollectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D742902784800A77A0D /* PostForPostCollectionCollectionViewCell.xib */; };
+		AA665D7929029C4F00A77A0D /* DescriptonProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D7729029C4F00A77A0D /* DescriptonProfileTableViewCell.swift */; };
+		AA665D7A29029C4F00A77A0D /* DescriptonProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D7829029C4F00A77A0D /* DescriptonProfileTableViewCell.xib */; };
+		AA665D802902B6BA00A77A0D /* ProfileDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D7F2902B6BA00A77A0D /* ProfileDescription.swift */; };
+		AA665D822902BC0C00A77A0D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D812902BC0C00A77A0D /* Post.swift */; };
+		AA665D852902BE4A00A77A0D /* ProfileStoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D832902BE4A00A77A0D /* ProfileStoriesTableViewCell.swift */; };
+		AA665D862902BE4A00A77A0D /* ProfileStoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D842902BE4A00A77A0D /* ProfileStoriesTableViewCell.xib */; };
+		AA665D892902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D872902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.swift */; };
+		AA665D8A2902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA665D882902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.xib */; };
+		AA665D8C2902C09A00A77A0D /* ProfileStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665D8B2902C09A00A77A0D /* ProfileStory.swift */; };
+		AA665E192902F4F000A77A0D /* Conspect27VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665E152902F4F000A77A0D /* Conspect27VC2.swift */; };
+		AA665E1A2902F4F000A77A0D /* Conspect27VC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665E162902F4F000A77A0D /* Conspect27VC3.swift */; };
+		AA665E1B2902F4F000A77A0D /* Conspect27VC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665E172902F4F000A77A0D /* Conspect27VC4.swift */; };
+		AA665E1C2902F4F000A77A0D /* Conspect27VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA665E182902F4F000A77A0D /* Conspect27VC.swift */; };
 		AA6BEB122900357800E09143 /* Conspect26VC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */; };
 		AA6BEB132900357800E09143 /* Conspect26VC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */; };
 		AA6BEB142900357800E09143 /* Conspect26VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BEB0F2900357800E09143 /* Conspect26VC2.swift */; };
@@ -45,6 +64,25 @@
 		AA34143828FD88E300DBDF33 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		AA34143B28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsTableViewCell.swift; sourceTree = "<group>"; };
 		AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsTableViewCell.xib; sourceTree = "<group>"; };
+		AA665D68290266A800A77A0D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		AA665D69290266A800A77A0D /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		AA665D6C29026CC500A77A0D /* PostCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		AA665D6D29026CC500A77A0D /* PostCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		AA665D732902784800A77A0D /* PostForPostCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForPostCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA665D742902784800A77A0D /* PostForPostCollectionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostForPostCollectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA665D7729029C4F00A77A0D /* DescriptonProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptonProfileTableViewCell.swift; sourceTree = "<group>"; };
+		AA665D7829029C4F00A77A0D /* DescriptonProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptonProfileTableViewCell.xib; sourceTree = "<group>"; };
+		AA665D7F2902B6BA00A77A0D /* ProfileDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDescription.swift; sourceTree = "<group>"; };
+		AA665D812902BC0C00A77A0D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AA665D832902BE4A00A77A0D /* ProfileStoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoriesTableViewCell.swift; sourceTree = "<group>"; };
+		AA665D842902BE4A00A77A0D /* ProfileStoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileStoriesTableViewCell.xib; sourceTree = "<group>"; };
+		AA665D872902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesForProfileStroriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA665D882902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesForProfileStroriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA665D8B2902C09A00A77A0D /* ProfileStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStory.swift; sourceTree = "<group>"; };
+		AA665E152902F4F000A77A0D /* Conspect27VC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC2.swift; sourceTree = "<group>"; };
+		AA665E162902F4F000A77A0D /* Conspect27VC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC3.swift; sourceTree = "<group>"; };
+		AA665E172902F4F000A77A0D /* Conspect27VC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC4.swift; sourceTree = "<group>"; };
+		AA665E182902F4F000A77A0D /* Conspect27VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect27VC.swift; sourceTree = "<group>"; };
 		AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC5.swift; sourceTree = "<group>"; };
 		AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC3.swift; sourceTree = "<group>"; };
 		AA6BEB0F2900357800E09143 /* Conspect26VC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conspect26VC2.swift; sourceTree = "<group>"; };
@@ -89,6 +127,10 @@
 				AA6BEB0E2900357800E09143 /* Conspect26VC3.swift */,
 				AA6BEB102900357800E09143 /* Conspect26VC4.swift */,
 				AA6BEB0D2900357700E09143 /* Conspect26VC5.swift */,
+				AA665E182902F4F000A77A0D /* Conspect27VC.swift */,
+				AA665E152902F4F000A77A0D /* Conspect27VC2.swift */,
+				AA665E162902F4F000A77A0D /* Conspect27VC3.swift */,
+				AA665E172902F4F000A77A0D /* Conspect27VC4.swift */,
 			);
 			path = Conspects;
 			sourceTree = "<group>";
@@ -97,18 +139,64 @@
 			isa = PBXGroup;
 			children = (
 				AA8604B628FD595400C1B87B /* Main.storyboard */,
+				AA665D7C29029C9800A77A0D /* CellForLikeVC */,
+				AA665D7B29029C6300A77A0D /* CellForHouseVC */,
+				AA665D7D2902AC3E00A77A0D /* CellForProfileVC */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA665D7B29029C6300A77A0D /* CellForHouseVC */ = {
+			isa = PBXGroup;
+			children = (
 				AA34143328FD75C400DBDF33 /* StoriesTableViewCell.swift */,
 				AA34143428FD75C400DBDF33 /* StoriesTableViewCell.xib */,
 				AA34143728FD88E300DBDF33 /* PostsTableViewCell.swift */,
 				AA34143828FD88E300DBDF33 /* PostsTableViewCell.xib */,
 				AA34143B28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift */,
 				AA34143C28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib */,
-				AA6BEB17290037C000E09143 /* CommentsTableViewCell.swift */,
+			);
+			path = CellForHouseVC;
+			sourceTree = "<group>";
+		};
+		AA665D7C29029C9800A77A0D /* CellForLikeVC */ = {
+			isa = PBXGroup;
+			children = (
 				AA6BEB18290037C000E09143 /* CommentsTableViewCell.xib */,
 				AA869078290154AA00756024 /* FollowersTableViewCell.swift */,
 				AA869079290154AA00756024 /* FollowersTableViewCell.xib */,
+				AA6BEB17290037C000E09143 /* CommentsTableViewCell.swift */,
 			);
-			path = Views;
+			path = CellForLikeVC;
+			sourceTree = "<group>";
+		};
+		AA665D7D2902AC3E00A77A0D /* CellForProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA665D68290266A800A77A0D /* ProfileTableViewCell.swift */,
+				AA665D69290266A800A77A0D /* ProfileTableViewCell.xib */,
+				AA665D7729029C4F00A77A0D /* DescriptonProfileTableViewCell.swift */,
+				AA665D7829029C4F00A77A0D /* DescriptonProfileTableViewCell.xib */,
+				AA665D832902BE4A00A77A0D /* ProfileStoriesTableViewCell.swift */,
+				AA665D842902BE4A00A77A0D /* ProfileStoriesTableViewCell.xib */,
+				AA665D872902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.swift */,
+				AA665D882902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.xib */,
+				AA665D6C29026CC500A77A0D /* PostCollectionTableViewCell.swift */,
+				AA665D6D29026CC500A77A0D /* PostCollectionTableViewCell.xib */,
+				AA665D732902784800A77A0D /* PostForPostCollectionCollectionViewCell.swift */,
+				AA665D742902784800A77A0D /* PostForPostCollectionCollectionViewCell.xib */,
+			);
+			path = CellForProfileVC;
+			sourceTree = "<group>";
+		};
+		AA665D7E2902B69300A77A0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA665D7F2902B6BA00A77A0D /* ProfileDescription.swift */,
+				AA665D812902BC0C00A77A0D /* Post.swift */,
+				AA665D8B2902C09A00A77A0D /* ProfileStory.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AA8604A428FD595400C1B87B = {
@@ -132,6 +220,7 @@
 			children = (
 				AA34142B28FD73C600DBDF33 /* Conspects */,
 				AA8604C528FD624300C1B87B /* Controllers */,
+				AA665D7E2902B69300A77A0D /* Models */,
 				AA34143028FD740E00DBDF33 /* Views */,
 				AA8604B028FD595400C1B87B /* AppDelegate.swift */,
 				AA8604B228FD595400C1B87B /* SceneDelegate.swift */,
@@ -215,10 +304,16 @@
 			files = (
 				AA34143E28FD8F6300DBDF33 /* RecomendationsTableViewCell.xib in Resources */,
 				AA8604BD28FD595600C1B87B /* LaunchScreen.storyboard in Resources */,
+				AA665D862902BE4A00A77A0D /* ProfileStoriesTableViewCell.xib in Resources */,
 				AA34143A28FD88E300DBDF33 /* PostsTableViewCell.xib in Resources */,
 				AA86907B290154AA00756024 /* FollowersTableViewCell.xib in Resources */,
 				AA34143628FD75C400DBDF33 /* StoriesTableViewCell.xib in Resources */,
+				AA665D762902784800A77A0D /* PostForPostCollectionCollectionViewCell.xib in Resources */,
+				AA665D7A29029C4F00A77A0D /* DescriptonProfileTableViewCell.xib in Resources */,
+				AA665D6B290266A800A77A0D /* ProfileTableViewCell.xib in Resources */,
 				AA8604BA28FD595600C1B87B /* Assets.xcassets in Resources */,
+				AA665D6F29026CC500A77A0D /* PostCollectionTableViewCell.xib in Resources */,
+				AA665D8A2902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.xib in Resources */,
 				AA8604B828FD595400C1B87B /* Main.storyboard in Resources */,
 				AA6BEB1A290037C000E09143 /* CommentsTableViewCell.xib in Resources */,
 			);
@@ -255,18 +350,31 @@
 				AA8604CD28FD665D00C1B87B /* PlusViewController.swift in Sources */,
 				AA8604CB28FD660E00C1B87B /* SearchViewController.swift in Sources */,
 				AA86907A290154AA00756024 /* FollowersTableViewCell.swift in Sources */,
+				AA665D852902BE4A00A77A0D /* ProfileStoriesTableViewCell.swift in Sources */,
 				AA6BEB152900357800E09143 /* Conspect26VC4.swift in Sources */,
 				AA6BEB162900357800E09143 /* Conspect26VC.swift in Sources */,
+				AA665E1A2902F4F000A77A0D /* Conspect27VC3.swift in Sources */,
 				AA6BEB122900357800E09143 /* Conspect26VC5.swift in Sources */,
+				AA665E1B2902F4F000A77A0D /* Conspect27VC4.swift in Sources */,
 				AA8604C928FD65CE00C1B87B /* HouseViewController.swift in Sources */,
 				AA34142F28FD73E800DBDF33 /* Conspect25VC2.swift in Sources */,
 				AA6BEB19290037C000E09143 /* CommentsTableViewCell.swift in Sources */,
+				AA665D822902BC0C00A77A0D /* Post.swift in Sources */,
 				AA8604B128FD595400C1B87B /* AppDelegate.swift in Sources */,
+				AA665E1C2902F4F000A77A0D /* Conspect27VC.swift in Sources */,
 				AA8604D128FD66C900C1B87B /* ProfileViewController.swift in Sources */,
 				AA6BEB132900357800E09143 /* Conspect26VC3.swift in Sources */,
 				AA6BEB142900357800E09143 /* Conspect26VC2.swift in Sources */,
+				AA665D6A290266A800A77A0D /* ProfileTableViewCell.swift in Sources */,
+				AA665D7929029C4F00A77A0D /* DescriptonProfileTableViewCell.swift in Sources */,
 				AA34143D28FD8F6300DBDF33 /* RecomendationsTableViewCell.swift in Sources */,
+				AA665D802902B6BA00A77A0D /* ProfileDescription.swift in Sources */,
 				AA34143928FD88E300DBDF33 /* PostsTableViewCell.swift in Sources */,
+				AA665D752902784800A77A0D /* PostForPostCollectionCollectionViewCell.swift in Sources */,
+				AA665D6E29026CC500A77A0D /* PostCollectionTableViewCell.swift in Sources */,
+				AA665D892902BEAF00A77A0D /* StoriesForProfileStroriesCollectionViewCell.swift in Sources */,
+				AA665D8C2902C09A00A77A0D /* ProfileStory.swift in Sources */,
+				AA665E192902F4F000A77A0D /* Conspect27VC2.swift in Sources */,
 				AA8604B328FD595400C1B87B /* SceneDelegate.swift in Sources */,
 				AA34142E28FD73E800DBDF33 /* Conspect25VC.swift in Sources */,
 				AA8604CF28FD669400C1B87B /* LikeViewController.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Экран с лайками
+/// Экран с лайками
 
 final class LikeViewController: UIViewController {
 
@@ -61,7 +61,7 @@ final class LikeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     // MARK: - Private Methods
     
     @objc private func refreshAction() {
@@ -69,13 +69,13 @@ final class LikeViewController: UIViewController {
     }
     
     private func setupUI() {
-        setupLikeVC()
         setupTabBar()
         setupRefreshControl()
         setupLikeTableView()
+        setupView()
     }
     
-    private func setupLikeVC() {
+    private func setupView() {
         view.backgroundColor = UIColor(named: Constants.colorBlackName)
     }
     

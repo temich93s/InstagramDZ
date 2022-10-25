@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с комментарием
+/// Ячейка с комментарием
 
 final class CommentsTableViewCell: UITableViewCell {
 
@@ -36,11 +36,7 @@ final class CommentsTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     
     private func setupUI() {
-        setupCommentLabel()
         friendLogoImageView.layer.cornerRadius = friendLogoImageView.frame.height / 2
-    }
-
-    private func setupCommentLabel() {
         guard let colorLightGray = UIColor(named: Constants.colorLightGrayName) else { return }
         let friendNameAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)]
         let friendNameAttributeText = NSMutableAttributedString(
