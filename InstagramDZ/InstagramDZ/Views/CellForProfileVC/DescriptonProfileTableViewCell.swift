@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка c описание профиля пользователя
+/// ячейка c описание профиля пользователя
 
 final class DescriptonProfileTableViewCell: UITableViewCell {
 

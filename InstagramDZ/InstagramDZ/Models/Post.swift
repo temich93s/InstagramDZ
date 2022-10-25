@@ -8,7 +8,7 @@
 import Foundation
 
 /// Post: посты пользователя
-/// - postImageName: Имя поста пользователя
 struct Post {
+    /// - postImageName: Имя поста пользователя
     var postImageName = ""
 }

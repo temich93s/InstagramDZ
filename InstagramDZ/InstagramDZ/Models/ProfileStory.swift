@@ -8,9 +8,9 @@
 import Foundation
 
 /// ProfileStory: история пользователя
-/// - storyImageName: Изображение истории
-/// - nameStroryName: Имя истории
 struct ProfileStory {
+    /// - storyImageName: Изображение истории
     var storyImageName = ""
+    /// - nameStroryName: Имя истории
     var storyName = ""
 }

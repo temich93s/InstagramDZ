@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка-сториз
+/// ячейка-сториз
 
 final class StoriesForProfileStroriesCollectionViewCell: UICollectionViewCell {
     

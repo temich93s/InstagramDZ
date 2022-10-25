@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка-пост для коллекции постов
+/// ячейка-пост для коллекции постов
 
 final class PostForPostCollectionCollectionViewCell: UICollectionViewCell {
 

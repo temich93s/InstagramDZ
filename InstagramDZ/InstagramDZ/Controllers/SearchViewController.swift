@@ -7,13 +7,13 @@
 
 import UIKit
 
-// MARK: - Cтраница поиска
+/// Cтраница поиска
 
 final class SearchViewController: UIViewController {
     
     // MARK: - Enum
     
-    private enum TableCellsTypes {
+    private enum TableCellTypes {
         case profile
         case postCollection
         case storiesProfile
@@ -58,7 +58,8 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private var tableCells: [TableCellsTypes] = [.profile, .descriptonProfile, .storiesProfile, .postCollection]
+    private var tableCells: [TableCellTypes] = [.profile, .descriptonProfile, .storiesProfile, .postCollection]
+    
     private let postCollection = [
         Post(postImageName: Constants.driveImageName),
         Post(postImageName: Constants.driveImageName),
@@ -78,6 +79,7 @@ final class SearchViewController: UIViewController {
         Post(postImageName: Constants.retrowaveImageName),
         Post(postImageName: Constants.friendlyPersonImageName)
     ]
+    
     private let profileDescription = ProfileDescription(
         profileImageName: Constants.profileImageName,
         personName: Constants.personName,
@@ -85,7 +87,8 @@ final class SearchViewController: UIViewController {
         descriptionText: Constants.descriptionText,
         subscribesText: Constants.subscribesText
     )
-    private let profileStory = [
+    
+    private let profileStorys = [
         ProfileStory(storyImageName: Constants.driveImageName,
                      storyName: Constants.driveStoryName),
         ProfileStory(storyImageName: Constants.retrowaveImageName,
@@ -192,7 +195,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 return UITableViewCell()
             }
-            storiesProfileCell.configureCell(profileStory: profileStory)
+            storiesProfileCell.configureCell(profileStory: profileStorys)
             return storiesProfileCell
         case .descriptonProfile:
             guard let descriptonProfileCell = profileTableView.dequeueReusableCell(

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка-профиль пользователя
+/// ячейка-профиль пользователя
 
 final class ProfileTableViewCell: UITableViewCell {
 

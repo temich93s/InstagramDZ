@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка с историями
+/// ячейка с историями
 
 final class ProfileStoriesTableViewCell: UITableViewCell {
 
@@ -24,7 +24,7 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
     
     // MARK: - Public Properties
     
-    var profileStory: [ProfileStory]?
+    var profileStorys: [ProfileStory]?
     
     // MARK: - Lifecycle
     
@@ -36,7 +36,7 @@ final class ProfileStoriesTableViewCell: UITableViewCell {
     // MARK: - Public Methods
     
     func configureCell(profileStory: [ProfileStory]) {
-        self.profileStory = profileStory
+        self.profileStorys = profileStory
     }
     
     // MARK: - Private Methods
@@ -57,7 +57,7 @@ extension ProfileStoriesTableViewCell:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return profileStory?.count ?? 0
+        return profileStorys?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -68,7 +68,7 @@ extension ProfileStoriesTableViewCell:
         else {
             return UICollectionViewCell()
         }
-        itemCell.configureCell(profileStory: profileStory?[indexPath.row])
+        itemCell.configureCell(profileStory: profileStorys?[indexPath.row])
         return itemCell
     }
     

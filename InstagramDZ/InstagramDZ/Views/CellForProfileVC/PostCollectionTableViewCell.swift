@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ячейка коллекция постов пользователя
+/// ячейка коллекция постов пользователя
 
 final class PostCollectionTableViewCell: UITableViewCell {
     
@@ -25,7 +25,7 @@ final class PostCollectionTableViewCell: UITableViewCell {
     
     // MARK: - Private Properties
     
-    private var postCollection: [Post]?
+    private var collectionPosts: [Post]?
     
     // MARK: - Lifecycle
     
@@ -37,7 +37,7 @@ final class PostCollectionTableViewCell: UITableViewCell {
     // MARK: - Public Methods
     
     func configureCell(postCollection: [Post], viewHight: CGFloat) {
-        self.postCollection = postCollection
+        self.collectionPosts = postCollection
         postCollectionView.translatesAutoresizingMaskIntoConstraints = false
         postCollectionView.heightAnchor.constraint(equalToConstant: viewHight).isActive = true
     }
@@ -59,7 +59,7 @@ extension PostCollectionTableViewCell:
     UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return postCollection?.count ?? 0
+        return collectionPosts?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -70,7 +70,7 @@ extension PostCollectionTableViewCell:
         else {
             return UICollectionViewCell()
         }
-        itemCell.configureCell(post: postCollection?[indexPath.row])
+        itemCell.configureCell(post: collectionPosts?[indexPath.row])
         return itemCell
     }
     

@@ -7,13 +7,13 @@
 
 import UIKit
 
-// MARK: - Лента новостей
+/// Лента новостей
 
 final class HouseViewController: UIViewController {
     
     // MARK: - Enum
     
-    private enum TableCellsTypes {
+    private enum TableCellTypes {
         case stories
         case posts
         case recomendations
@@ -45,7 +45,7 @@ final class HouseViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private var tableCellsTypes: [TableCellsTypes] = [.stories, .posts, .recomendations, .posts, .posts]
+    private var tableCellsTypes: [TableCellTypes] = [.stories, .posts, .recomendations, .posts, .posts]
     
     // MARK: - Lifecycle
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с комментарием
+/// Ячейка с комментарием
 
 final class CommentsTableViewCell: UITableViewCell {
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с рекомендациями
+/// Ячейка с рекомендациями
 
 final class RecomendationsTableViewCell: UITableViewCell {
 

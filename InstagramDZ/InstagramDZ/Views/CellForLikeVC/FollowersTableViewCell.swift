@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка с новыми подписчиками
+/// Ячейка с новыми подписчиками
 
 final class FollowersTableViewCell: UITableViewCell {
     

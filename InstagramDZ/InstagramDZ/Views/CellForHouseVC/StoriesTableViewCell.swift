@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Ячейка со сторисами
+/// Ячейка со сторисами
 
 final class StoriesTableViewCell: UITableViewCell {
 

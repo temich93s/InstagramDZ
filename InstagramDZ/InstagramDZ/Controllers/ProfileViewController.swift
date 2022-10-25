@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Cтраница профиля пользователя
+/// Cтраница профиля пользователя
 
 final class ProfileViewController: UIViewController {
 

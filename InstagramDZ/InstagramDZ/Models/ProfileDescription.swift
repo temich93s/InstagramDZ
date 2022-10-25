@@ -8,15 +8,15 @@
 import Foundation
 
 /// ProfileDescription: описание пользователя
-/// - profileImageName: Имя изображения пользователя
-/// - personName: Имя пользователя
-/// - professionName: Профессия пользователя
-/// - descriptionText: Описание пользователя
-/// - subscribesText: Подписчики
 struct ProfileDescription {
+    /// - profileImageName: Имя изображения пользователя
     var profileImageName = ""
+    /// - personName: Имя пользователя
     var personName = ""
+    /// - professionName: Профессия пользователя
     var professionName = ""
+    /// - descriptionText: Описание пользователя
     var descriptionText = ""
+    /// - subscribesText: Подписчики
     var subscribesText = ""
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Экран с лайками
+/// Экран с лайками
 
 final class LikeViewController: UIViewController {
 
@@ -72,6 +72,10 @@ final class LikeViewController: UIViewController {
         setupTabBar()
         setupRefreshControl()
         setupLikeTableView()
+        setupView()
+    }
+    
+    private func setupView() {
         view.backgroundColor = UIColor(named: Constants.colorBlackName)
     }
     
